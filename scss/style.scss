@@ -45,20 +45,27 @@ header {
     }
 }
 
-.triangle {
-    display: block;
-    background-color: $brand_header_color;
-    clip-path: polygon(100% 0, 50% 80%, 0 0);
-    margin: 0 auto;
-    width: 100px;
-}
-
 .menu {
     list-style: none;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 68px;
+    .menu_item {
+        width: 103px;
+    }
+    .logo {
+        font-size: 48px;
+    }
+}
+
+.triangle {
+    display: block;
+    background-color: $brand_header_color;
+    clip-path: polygon(100% 0, 50% 80%, 0 0);
+    margin: 0 auto;
+    width: 100px;
+    height: 30px;
 }
 
 .banner_part {

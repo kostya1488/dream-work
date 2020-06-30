@@ -39,15 +39,24 @@
     height: 120px;
   }
 
-  header .logo {
+  .burger {
+    position: absolute;
+    right: 10px;
+    font-size: 28px;
+    color: #2eb398;
+    transition: color 0.3s linear;
+  }
+
+  header li.logo {
     display: none;
   }
   header .toggle {
     display: block;
-    font-size: 34px;
-    line-height: 46px;
+    font-size: 42px;
+    line-height: 40px;
     color: #ffffff;
     text-align: center;
+    transition: color 0.3s linear;
   }
   header #checkbox-menu:checked + label .touch li {
     visibility: visible;
@@ -57,6 +66,12 @@
   header #checkbox-menu:checked + label .touch {
     height: 200px;
   }
+  header #checkbox-menu:checked + label .toggle {
+    color: #2eb398;
+  }
+  header #checkbox-menu:checked + label .burger {
+    color: #ffffff;
+  }
   header .menu {
     display: flex;
     flex-direction: column;
@@ -64,7 +79,7 @@
     height: 0;
     transition: height 0.3s linear;
   }
-  header .menu li {
+  header .menu_item {
     display: flex;
     justify-content: center;
     opacity: 0;
@@ -112,6 +127,20 @@ header .active {
   color: #2eb398;
 }
 
+.menu {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 68px;
+}
+.menu .menu_item {
+  width: 103px;
+}
+.menu .logo {
+  font-size: 48px;
+}
+
 .triangle {
   display: block;
   background-color: #323232;
@@ -119,14 +148,7 @@ header .active {
           clip-path: polygon(100% 0, 50% 80%, 0 0);
   margin: 0 auto;
   width: 100px;
-}
-
-.menu {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 68px;
+  height: 30px;
 }
 
 .banner_part {

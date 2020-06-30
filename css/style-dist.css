@@ -1,3 +1,76 @@
+@media screen and (max-width: 1460px) {
+  .row_sota .sota_item {
+    width: 185px;
+    height: 165px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .row_sota .sota_item {
+    width: 150px;
+    height: 135px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .outer_circle {
+    display: none;
+  }
+}
+@media screen and (max-width: 767px) {
+  .middle_circle {
+    display: none;
+  }
+
+  .form_area {
+    flex-direction: column;
+  }
+  .form_area form {
+    width: none;
+  }
+
+  .about_block {
+    flex-direction: column;
+  }
+  .about_block .right_block {
+    width: 100%;
+  }
+
+  .row_sota .sota_item {
+    width: 130px;
+    height: 120px;
+  }
+
+  header .logo {
+    display: none;
+  }
+  header .toggle {
+    display: block;
+    font-size: 34px;
+    line-height: 46px;
+    color: #ffffff;
+    text-align: center;
+  }
+  header #checkbox-menu:checked + label .touch li {
+    visibility: visible;
+    opacity: 1;
+    transition: all 0.7s linear;
+  }
+  header #checkbox-menu:checked + label .touch {
+    height: 200px;
+  }
+  header .menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 0;
+    transition: height 0.3s linear;
+  }
+  header .menu li {
+    display: flex;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+  }
+}
 * {
   padding: 0;
   margin: 0;
@@ -9,14 +82,18 @@ body {
 }
 
 section {
-  padding: 90px;
-  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  padding: 90px 10px;
 }
 
 .wrapper {
   margin: 0 auto;
   width: 100%;
   max-width: 820px;
+}
+
+#checkbox-menu,
+.toggle {
+  display: none;
 }
 
 header {
@@ -35,30 +112,21 @@ header .active {
   color: #2eb398;
 }
 
-.main_menu {
-  display: flex;
-  justify-content: center;
+.triangle {
+  display: block;
+  background-color: #323232;
+  -webkit-clip-path: polygon(100% 0, 50% 80%, 0 0);
+          clip-path: polygon(100% 0, 50% 80%, 0 0);
+  margin: 0 auto;
+  width: 100px;
 }
-.main_menu ul {
-  display: flex;
+
+.menu {
   list-style: none;
-  height: 68px;
-}
-.main_menu li {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100px;
-}
-.main_menu .logo {
-  -webkit-clip-path: polygon(100% 0, 100% 70%, 50% 100%, 0 70%, 0 0);
-          clip-path: polygon(100% 0, 100% 70%, 50% 100%, 0 70%, 0 0);
-  top: 22px;
-  height: 95px;
-  background-color: #323232;
-}
-.main_menu .logo a {
-  font-size: 60px;
+  height: 68px;
 }
 
 .banner_part {
@@ -73,7 +141,6 @@ header .active {
 .sota_item {
   -webkit-clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
           clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
-  background-color: #323232;
   margin: 5px;
   width: 230px;
   height: 200px;
@@ -93,8 +160,10 @@ header .active {
   background-color: #2eb398;
 }
 .about_us_part .sota_item {
-  width: 320px;
-  height: 250px;
+  max-width: 320px;
+  max-height: 250px;
+  width: 100%;
+  height: 100%;
 }
 .about_us_part .about_block {
   display: flex;
@@ -133,7 +202,8 @@ header .active {
   justify-content: center;
 }
 .form_area .blockText {
-  width: 300px;
+  max-width: 280px;
+  width: 100%;
   padding: 10px;
 }
 .form_area .blockText .contacts {
@@ -154,7 +224,9 @@ header .active {
   color: #e0e0e0;
 }
 .form_area form {
-  width: 600px;
+  width: 100%;
+  max-width: 600px;
+  min-width: 200px;
   display: flex;
   flex-direction: column;
 }

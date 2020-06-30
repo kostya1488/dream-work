@@ -1,3 +1,4 @@
+@import "style_mobile.scss";
 $brand_header_color: #323232;
 $brand_link_color: #2eb398;
 * {
@@ -11,16 +12,21 @@ body {
 }
 
 section {
-    padding: 90px;
-    -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
-    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+    padding: 90px 10px;
+    // -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+    // -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+    // box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
 .wrapper {
     margin: 0 auto;
     width: 100%;
     max-width: 820px;
+}
+
+#checkbox-menu,
+.toggle {
+    display: none;
 }
 
 header {
@@ -39,29 +45,20 @@ header {
     }
 }
 
-.main_menu {
+.triangle {
+    display: block;
+    background-color: $brand_header_color;
+    clip-path: polygon(100% 0, 50% 80%, 0 0);
+    margin: 0 auto;
+    width: 100px;
+}
+
+.menu {
+    list-style: none;
     display: flex;
     justify-content: center;
-    ul {
-        display: flex;
-        list-style: none;
-        height: 68px;
-    }
-    li {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100px;
-    }
-    .logo {
-        a {
-            font-size: 60px;
-        }
-        clip-path: polygon(100% 0, 100% 70%, 50% 100%, 0 70%, 0 0);
-        top: 22px;
-        height: 95px;
-        background-color: $brand_header_color;
-    }
+    align-items: center;
+    height: 68px;
 }
 
 .banner_part {
@@ -75,7 +72,6 @@ header {
 
 .sota_item {
     clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
-    background-color: $brand_header_color;
     margin: 5px;
     width: 230px;
     height: 200px;
@@ -94,8 +90,10 @@ header {
 .about_us_part {
     background-color: $brand_link_color;
     .sota_item {
-        width: 320px;
-        height: 250px;
+        max-width: 320px;
+        max-height: 250px;
+        width: 100%;
+        height: 100%;
     }
     .about_block {
         display: flex;
@@ -134,7 +132,8 @@ header {
     display: flex;
     justify-content: center;
     .blockText {
-        width: 300px;
+        max-width: 280px;
+        width: 100%;
         padding: 10px;
         .contacts {
             margin-top: 50px;
@@ -155,7 +154,9 @@ header {
         color: #e0e0e0;
     }
     form {
-        width: 600px;
+        width: 100%;
+        max-width: 600px;
+        min-width: 200px;
         display: flex;
         flex-direction: column;
         input,

@@ -1,10 +1,12 @@
 @import "style_mobile.scss";
 $brand_header_color: #323232;
 $brand_link_color: #2eb398;
+$brand_text_color: #d7fcf5;
 * {
     padding: 0;
     margin: 0;
-    font-family: 'Lato', sans-serif;
+    // font-family: 'Lato', sans-serif;
+    font-family: sans-serif;
 }
 
 body {
@@ -94,6 +96,83 @@ header {
     }
 }
 
+.gistogramm_area {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 90px;
+}
+
+.gistogramm_area_text {
+    width: 100%;
+    min-width: 200px;
+    max-width: 500px;
+    color: $brand_text_color;
+    .h2 {
+        font-size: 42px;
+        color: $brand_text_color;
+    }
+}
+
+.gistogramma {
+    list-style: none;
+    display: flex;
+    align-items: flex-end;
+    margin-left: 20px;
+    // height: 500px;
+    li {
+        display: flex;
+        flex-direction: column-reverse;
+        text-align: center;
+        font-size: 18px;
+        color: $brand_text_color;
+    }
+}
+
+.gist_value {
+    width: 95px;
+    margin: 5px;
+    height: 100%;
+    background-color: $brand_text_color;
+    padding: 8px 4px 0;
+    transition: all .2s linear;
+    color: $brand_link_color;
+    font-size: 18px;
+    .smile {
+        transition: all .4s linear;
+        font-size: 72px;
+        color: $brand_text_color;
+    }
+    &:hover {
+        background-color: darken($brand_text_color, 30%);
+    }
+}
+
+.li1 {
+    height: 16%;
+}
+
+.li2 {
+    height: 20%;
+}
+
+.li3 {
+    height: 24%;
+}
+
+.li4 {
+    height: 30%;
+}
+
+.li5 {
+    height: 100%;
+    .gist_value {
+        background-color: darken($brand_text_color, 30%);
+        &:hover .smile {
+            color: #fff578;
+        }
+    }
+}
+
 .about_us_part {
     background-color: $brand_link_color;
     .sota_item {
@@ -117,10 +196,10 @@ header {
     }
     .h2 {
         font-size: 42px;
-        color: #d7fcf5;
+        color: $brand_text_color;
     }
     .main_text {
-        color: #d7fcf5;
+        color: $brand_text_color;
     }
 }
 
@@ -137,7 +216,7 @@ header {
 
 .form_area {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     .blockText {
         max-width: 280px;
         width: 100%;
@@ -162,7 +241,7 @@ header {
     }
     form {
         width: 100%;
-        max-width: 600px;
+        max-width: 500px;
         min-width: 200px;
         display: flex;
         flex-direction: column;
@@ -181,7 +260,7 @@ header {
             margin-top: 10px;
             outline: none;
             border: none;
-            color: #d7fcf5;
+            color: $brand_text_color;
             width: 150px;
             float: right;
             &:hover {

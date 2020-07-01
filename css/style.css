@@ -93,7 +93,7 @@
 * {
   padding: 0;
   margin: 0;
-  font-family: "Lato", sans-serif;
+  font-family: sans-serif;
 }
 
 body {
@@ -182,6 +182,82 @@ header .active {
   transform: scale(1.1);
 }
 
+.gistogramm_area {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 90px;
+}
+
+.gistogramm_area_text {
+  width: 100%;
+  min-width: 200px;
+  max-width: 500px;
+  color: #d7fcf5;
+}
+.gistogramm_area_text .h2 {
+  font-size: 42px;
+  color: #d7fcf5;
+}
+
+.gistogramma {
+  list-style: none;
+  display: flex;
+  align-items: flex-end;
+  margin-left: 20px;
+}
+.gistogramma li {
+  display: flex;
+  flex-direction: column-reverse;
+  text-align: center;
+  font-size: 18px;
+  color: #d7fcf5;
+}
+
+.gist_value {
+  width: 95px;
+  margin: 5px;
+  height: 100%;
+  background-color: #d7fcf5;
+  padding: 8px 4px 0;
+  transition: all 0.2s linear;
+  color: #2eb398;
+  font-size: 18px;
+}
+.gist_value .smile {
+  transition: all 0.4s linear;
+  font-size: 72px;
+  color: #d7fcf5;
+}
+.gist_value:hover {
+  background-color: #49f1d1;
+}
+
+.li1 {
+  height: 16%;
+}
+
+.li2 {
+  height: 20%;
+}
+
+.li3 {
+  height: 24%;
+}
+
+.li4 {
+  height: 30%;
+}
+
+.li5 {
+  height: 100%;
+}
+.li5 .gist_value {
+  background-color: #49f1d1;
+}
+.li5 .gist_value:hover .smile {
+  color: #fff578;
+}
+
 .about_us_part {
   background-color: #2eb398;
 }
@@ -225,7 +301,7 @@ header .active {
 
 .form_area {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
 }
 .form_area .blockText {
   max-width: 280px;
@@ -251,7 +327,7 @@ header .active {
 }
 .form_area form {
   width: 100%;
-  max-width: 600px;
+  max-width: 500px;
   min-width: 200px;
   display: flex;
   flex-direction: column;

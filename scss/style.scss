@@ -1,11 +1,19 @@
-@import "style_mobile.scss";
-$brand_header_color: #323232;
-$brand_link_color: #2eb398;
-$brand_text_color: #d7fcf5;
+$brand_header_color: #b8bcc7;
+$brand_link_color: #f79a88;
+$brand_text_color: #fff;
+// ----------------------------
+$screen_width_min_sm: 576px;
+$screen_width_min_md: 768px;
+$screen_width_min_lg: 992px;
+$screen_width_min_xl: 1200px;
+// ****************************
+$screen_width_max_sm: 575px;
+$screen_width_max_md: 767px;
+$screen_width_max_lg: 991px;
+// ----------------------------
 * {
     padding: 0;
     margin: 0;
-    // font-family: 'Lato', sans-serif;
     font-family: sans-serif;
 }
 
@@ -13,17 +21,24 @@ body {
     overflow-x: hidden;
 }
 
+h2 {
+    margin: 0 0 20px;
+    text-align: center;
+}
+
+p {
+    font-size: 18px;
+    text-align: center;
+    line-height: 1.8;
+}
+
 section {
     padding: 90px 10px;
-    // -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
-    // -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
-    // box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
 .wrapper {
     margin: 0 auto;
-    width: 100%;
-    max-width: 820px;
+    max-width: 1200px;
 }
 
 #checkbox-menu,
@@ -35,15 +50,66 @@ header {
     background-color: $brand_header_color;
     a {
         text-decoration: none;
-        color: #fff;
+        color: $brand_text_color;
         margin: 0 10px;
         transition: color .2s linear;
+        font-weight: 600;
         &:hover {
-            color: $brand_link_color;
+            color: darken($brand_link_color, 30%);
         }
     }
     .active {
-        color: $brand_link_color;
+        color: darken($brand_link_color, 30%);
+        &:hover {
+            color: $brand_text_color;
+        }
+    }
+    @media (max-width: $screen_width_max_md) {
+        .burger {
+            position: absolute;
+            right: 10px;
+            font-size: 28px;
+            color: darken($brand_link_color, 30%);
+            transition: color .3s linear;
+        }
+        li.logo {
+            display: none;
+        }
+        .toggle {
+            display: block;
+            font-size: 42px;
+            line-height: 48px;
+            color: #ffffff;
+            text-align: center;
+            transition: color .3s linear;
+        }
+        #checkbox-menu:checked+label .touch li {
+            visibility: visible;
+            opacity: 1;
+            transition: all .7s linear;
+        }
+        #checkbox-menu:checked+label .touch {
+            height: 200px;
+        }
+        #checkbox-menu:checked+label .toggle {
+            color: darken($brand_link_color, 30%);
+        }
+        #checkbox-menu:checked+label .burger {
+            color: #ffffff;
+        }
+        .menu {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            height: 0;
+            transition: height .3s linear;
+        }
+        .menu_item {
+            display: flex;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+        }
     }
 }
 
@@ -74,9 +140,28 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    .row_sota {
-        display: flex;
+    .outer_circle {
+        display: none;
     }
+    @media (max-width: $screen_width_max_md) {
+        .small_circle {
+            display: none;
+        }
+    }
+    @media (max-width: $screen_width_max_lg) {
+        .middle_circle {
+            display: none;
+        }
+    }
+    @media (min-width: 1480px) {
+        .outer_circle {
+            display: block;
+        }
+    }
+}
+
+.row_sota {
+    display: flex;
 }
 
 .sota_item {
@@ -96,116 +181,143 @@ header {
     }
 }
 
-.gistogramm_area {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 90px;
-}
-
-.gistogramm_area_text {
-    width: 100%;
-    min-width: 200px;
-    max-width: 500px;
-    color: $brand_text_color;
-    .h2 {
-        font-size: 42px;
-        color: $brand_text_color;
+.about_us_part {
+    background: url(../assets/img/1587043052_30-p-foni-dlya-internet-magazinov-73.jpg) no-repeat 20% 0;
+    padding: 10px;
+    @media (min-width: $screen_width_min_lg) {
+        background-position: 50% 0;
+        height: 1000px;
+        padding: 90px 10px;
+        background-position: 20% 0;
+        .gistogramma {
+            max-width: 500px;
+            height: 560px;
+        }
     }
-}
-
-.gistogramma {
-    list-style: none;
-    display: flex;
-    align-items: flex-end;
-    margin-left: 20px;
-    // height: 500px;
-    li {
+    .gistogramm_area {
         display: flex;
-        flex-direction: column-reverse;
-        text-align: center;
-        font-size: 18px;
-        color: $brand_text_color;
+        justify-content: flex-end;
+        height: 63%;
     }
-}
-
-.gist_value {
-    width: 95px;
-    margin: 5px;
-    height: 100%;
-    background-color: $brand_text_color;
-    padding: 8px 4px 0;
-    transition: all .2s linear;
-    color: $brand_link_color;
-    font-size: 18px;
-    .smile {
-        transition: all .4s linear;
-        font-size: 72px;
-        color: $brand_text_color;
+    .gistogramma {
+        list-style: none;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: flex-end;
+        height: 700px;
+        width: 100%;
+        padding: 20px 10px;
+        background-color: #00000069;
+        li {
+            display: flex;
+            flex-direction: column-reverse;
+            text-align: center;
+            font-size: 18px;
+            color: $brand_text_color;
+        }
+        p {
+            font-size: 16px;
+        }
     }
-    &:hover {
-        background-color: darken($brand_text_color, 30%);
+    .gistogram_column {
+        margin: 5px;
+        height: 100%;
+        padding: 8px 4px 0;
+        transition: all .2s linear;
     }
-}
-
-.li1 {
-    height: 16%;
-}
-
-.li2 {
-    height: 20%;
-}
-
-.li3 {
-    height: 24%;
-}
-
-.li4 {
-    height: 30%;
-}
-
-.li5 {
-    height: 100%;
-    .gist_value {
-        background-color: darken($brand_text_color, 30%);
-        &:hover .smile {
-            color: #fff578;
+    .li1 {
+        height: 24%;
+    }
+    .li2 {
+        height: 28%;
+    }
+    .li3 {
+        height: 30%;
+    }
+    .li4 {
+        height: 40%;
+    }
+    .li5 {
+        height: 100%;
+    }
+    .list_item {
+        width: 100%;
+        max-width: 100px;
+        min-width: 40px;
+        .gistogram_column {
+            background-color: $brand_header_color;
+            color: #887c7c;
+            .smile {
+                font-size: 42px;
+            }
+            &:hover {
+                background-color: darken($brand_header_color, 10%);
+            }
+        }
+    }
+    .list_item_sotra {
+        width: 100%;
+        max-width: 130px;
+        min-width: 60px;
+        .gistogram_column {
+            background-color: $brand_text_color;
+            p {
+                color: darken($brand_link_color, 30%);
+                font-weight: 600;
+                font-size: 24px;
+            }
+            .smile {
+                font-size: 64px;
+                color: $brand_header_color;
+                transition: all .2s linear;
+            }
+            &:hover .smile {
+                color: darken($brand_link_color, 30%);
+            }
         }
     }
 }
 
-.about_us_part {
-    background-color: $brand_link_color;
-    .sota_item {
-        max-width: 320px;
-        max-height: 250px;
-        width: 100%;
-        height: 100%;
-    }
-    .about_block {
+.service {
+    margin-bottom: 50px;
+    .row {
         display: flex;
         justify-content: space-between;
-        align-items: center;
     }
 }
 
-.right_block {
-    width: 600px;
-    padding: 10px;
+.service_item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
     p {
-        line-height: 1.4;
+        font-size: 14px;
     }
-    .h2 {
-        font-size: 42px;
-        color: $brand_text_color;
+    h4 {
+        margin: 15px 0;
     }
-    .main_text {
-        color: $brand_text_color;
+    .circle {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: lighten($brand_link_color, 20%);
+        width: 63px;
+        height: 63px;
+        color: $brand_link_color;
+        border-radius: 50%;
+        padding: 10px;
+        font-size: 40px;
+        text-align: center;
     }
 }
 
 .callback_part {
     background-color: #323232;
     p {
+        text-align: center;
         color: #a0a0a0;
     }
     .h2 {
@@ -216,11 +328,15 @@ header {
 
 .form_area {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    margin-top: 50px;
     .blockText {
         max-width: 280px;
         width: 100%;
         padding: 10px;
+        p {
+            text-align: start;
+        }
         .contacts {
             margin-top: 50px;
             p {
@@ -229,7 +345,7 @@ header {
             i {
                 color: $brand_link_color;
                 width: 16px;
-                margin-right: 5px;
+                margin-right: 14px;
                 &:hover {
                     color: lighten($brand_link_color, 10%);
                 }
@@ -245,6 +361,7 @@ header {
         min-width: 200px;
         display: flex;
         flex-direction: column;
+        margin-right: 20px;
         input,
         textarea {
             padding: 10px;

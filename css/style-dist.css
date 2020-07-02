@@ -1,56 +1,65 @@
-@media screen and (max-width: 1460px) {
-  .row_sota .sota_item {
-    width: 185px;
-    height: 165px;
-  }
+* {
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
 }
-@media screen and (max-width: 1200px) {
-  .row_sota .sota_item {
-    width: 150px;
-    height: 135px;
-  }
+
+body {
+  overflow-x: hidden;
 }
-@media screen and (max-width: 1000px) {
-  .outer_circle {
-    display: none;
-  }
+
+h2 {
+  margin: 0 0 20px;
+  text-align: center;
 }
-@media screen and (max-width: 767px) {
-  body section {
-    padding: 50px 10px;
-  }
 
-  .middle_circle {
-    display: none;
-  }
+p {
+  font-size: 18px;
+  text-align: center;
+  line-height: 1.8;
+}
 
-  .form_area {
-    flex-direction: column;
-  }
-  .form_area form {
-    width: none;
-  }
+section {
+  padding: 90px 10px;
+}
 
-  .about_block {
-    flex-direction: column;
-  }
-  .about_block .right_block {
-    width: 100%;
-  }
+.wrapper {
+  margin: 0 auto;
+  max-width: 1200px;
+}
 
-  .row_sota .sota_item {
-    width: 130px;
-    height: 120px;
-  }
+#checkbox-menu,
+.toggle {
+  display: none;
+}
 
-  .burger {
+header {
+  background-color: #b8bcc7;
+}
+header a {
+  text-decoration: none;
+  color: #fff;
+  margin: 0 10px;
+  transition: color 0.2s linear;
+  font-weight: 600;
+}
+header a:hover {
+  color: #d82f0e;
+}
+header .active {
+  color: #d82f0e;
+}
+header .active:hover {
+  color: #fff;
+}
+@media (max-width: 767px) {
+  header .burger {
     position: absolute;
     right: 10px;
     font-size: 28px;
-    color: #2eb398;
+    color: #d82f0e;
     transition: color 0.3s linear;
   }
-
   header li.logo {
     display: none;
   }
@@ -71,7 +80,7 @@
     height: 200px;
   }
   header #checkbox-menu:checked + label .toggle {
-    color: #2eb398;
+    color: #d82f0e;
   }
   header #checkbox-menu:checked + label .burger {
     color: #ffffff;
@@ -90,46 +99,6 @@
     visibility: hidden;
   }
 }
-* {
-  padding: 0;
-  margin: 0;
-  font-family: sans-serif;
-}
-
-body {
-  overflow-x: hidden;
-}
-
-section {
-  padding: 90px 10px;
-}
-
-.wrapper {
-  margin: 0 auto;
-  width: 100%;
-  max-width: 820px;
-}
-
-#checkbox-menu,
-.toggle {
-  display: none;
-}
-
-header {
-  background-color: #323232;
-}
-header a {
-  text-decoration: none;
-  color: #fff;
-  margin: 0 10px;
-  transition: color 0.2s linear;
-}
-header a:hover {
-  color: #2eb398;
-}
-header .active {
-  color: #2eb398;
-}
 
 .menu {
   list-style: none;
@@ -147,7 +116,7 @@ header .active {
 
 .triangle {
   display: block;
-  background-color: #323232;
+  background-color: #b8bcc7;
   -webkit-clip-path: polygon(100% 0, 50% 80%, 0 0);
           clip-path: polygon(100% 0, 50% 80%, 0 0);
   margin: 0 auto;
@@ -160,7 +129,26 @@ header .active {
   flex-direction: column;
   align-items: center;
 }
-.banner_part .row_sota {
+.banner_part .outer_circle {
+  display: none;
+}
+@media (max-width: 767px) {
+  .banner_part .small_circle {
+    display: none;
+  }
+}
+@media (max-width: 991px) {
+  .banner_part .middle_circle {
+    display: none;
+  }
+}
+@media (min-width: 1480px) {
+  .banner_part .outer_circle {
+    display: block;
+  }
+}
+
+.row_sota {
   display: flex;
 }
 
@@ -182,116 +170,146 @@ header .active {
   transform: scale(1.1);
 }
 
-.gistogramm_area {
+.about_us_part {
+  background: url(../assets/img/1587043052_30-p-foni-dlya-internet-magazinov-73.jpg) no-repeat 20% 0;
+  padding: 10px;
+}
+@media (min-width: 992px) {
+  .about_us_part {
+    background-position: 50% 0;
+    height: 1000px;
+    padding: 90px 10px;
+    background-position: 20% 0;
+  }
+  .about_us_part .gistogramma {
+    max-width: 500px;
+    height: 560px;
+  }
+}
+.about_us_part .gistogramm_area {
   display: flex;
-  justify-content: center;
-  margin-bottom: 90px;
+  justify-content: flex-end;
+  height: 63%;
 }
-
-.gistogramm_area_text {
-  width: 100%;
-  min-width: 200px;
-  max-width: 500px;
-  color: #d7fcf5;
-}
-.gistogramm_area_text .h2 {
-  font-size: 42px;
-  color: #d7fcf5;
-}
-
-.gistogramma {
+.about_us_part .gistogramma {
   list-style: none;
   display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
   align-items: flex-end;
-  margin-left: 20px;
+  height: 700px;
+  width: 100%;
+  padding: 20px 10px;
+  background-color: #00000069;
 }
-.gistogramma li {
+.about_us_part .gistogramma li {
   display: flex;
   flex-direction: column-reverse;
   text-align: center;
   font-size: 18px;
-  color: #d7fcf5;
+  color: #fff;
 }
-
-.gist_value {
-  width: 95px;
+.about_us_part .gistogramma p {
+  font-size: 16px;
+}
+.about_us_part .gistogram_column {
   margin: 5px;
   height: 100%;
-  background-color: #d7fcf5;
   padding: 8px 4px 0;
   transition: all 0.2s linear;
-  color: #2eb398;
-  font-size: 18px;
 }
-.gist_value .smile {
-  transition: all 0.4s linear;
-  font-size: 72px;
-  color: #d7fcf5;
-}
-.gist_value:hover {
-  background-color: #49f1d1;
-}
-
-.li1 {
-  height: 16%;
-}
-
-.li2 {
-  height: 20%;
-}
-
-.li3 {
+.about_us_part .li1 {
   height: 24%;
 }
-
-.li4 {
+.about_us_part .li2 {
+  height: 28%;
+}
+.about_us_part .li3 {
   height: 30%;
 }
-
-.li5 {
+.about_us_part .li4 {
+  height: 40%;
+}
+.about_us_part .li5 {
   height: 100%;
 }
-.li5 .gist_value {
-  background-color: #49f1d1;
-}
-.li5 .gist_value:hover .smile {
-  color: #fff578;
-}
-
-.about_us_part {
-  background-color: #2eb398;
-}
-.about_us_part .sota_item {
-  max-width: 320px;
-  max-height: 250px;
+.about_us_part .list_item {
   width: 100%;
-  height: 100%;
+  max-width: 100px;
+  min-width: 40px;
 }
-.about_us_part .about_block {
+.about_us_part .list_item .gistogram_column {
+  background-color: #b8bcc7;
+  color: #887c7c;
+}
+.about_us_part .list_item .gistogram_column .smile {
+  font-size: 42px;
+}
+.about_us_part .list_item .gistogram_column:hover {
+  background-color: #9ba1b1;
+}
+.about_us_part .list_item_sotra {
+  width: 100%;
+  max-width: 130px;
+  min-width: 60px;
+}
+.about_us_part .list_item_sotra .gistogram_column {
+  background-color: #fff;
+}
+.about_us_part .list_item_sotra .gistogram_column p {
+  color: #d82f0e;
+  font-weight: 600;
+  font-size: 24px;
+}
+.about_us_part .list_item_sotra .gistogram_column .smile {
+  font-size: 64px;
+  color: #b8bcc7;
+  transition: all 0.2s linear;
+}
+.about_us_part .list_item_sotra .gistogram_column:hover .smile {
+  color: #d82f0e;
+}
+
+.service {
+  margin-bottom: 50px;
+}
+.service .row {
   display: flex;
   justify-content: space-between;
-  align-items: center;
 }
 
-.right_block {
-  width: 600px;
+.service_item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+}
+.service_item p {
+  font-size: 14px;
+}
+.service_item h4 {
+  margin: 15px 0;
+}
+.service_item .circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fdebe8;
+  width: 63px;
+  height: 63px;
+  color: #f79a88;
+  border-radius: 50%;
   padding: 10px;
-}
-.right_block p {
-  line-height: 1.4;
-}
-.right_block .h2 {
-  font-size: 42px;
-  color: #d7fcf5;
-}
-.right_block .main_text {
-  color: #d7fcf5;
+  font-size: 40px;
+  text-align: center;
 }
 
 .callback_part {
   background-color: #323232;
 }
 .callback_part p {
+  text-align: center;
   color: #a0a0a0;
 }
 .callback_part .h2 {
@@ -301,12 +319,16 @@ header .active {
 
 .form_area {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  margin-top: 50px;
 }
 .form_area .blockText {
   max-width: 280px;
   width: 100%;
   padding: 10px;
+}
+.form_area .blockText p {
+  text-align: start;
 }
 .form_area .blockText .contacts {
   margin-top: 50px;
@@ -315,12 +337,12 @@ header .active {
   margin-top: 10px;
 }
 .form_area .blockText .contacts i {
-  color: #2eb398;
+  color: #f79a88;
   width: 16px;
-  margin-right: 5px;
+  margin-right: 14px;
 }
 .form_area .blockText .contacts i:hover {
-  color: #45cfb3;
+  color: #fac3b8;
 }
 .form_area span {
   color: #e0e0e0;
@@ -331,6 +353,7 @@ header .active {
   min-width: 200px;
   display: flex;
   flex-direction: column;
+  margin-right: 20px;
 }
 .form_area form input,
 .form_area form textarea {
@@ -342,18 +365,18 @@ header .active {
   outline: none;
 }
 .form_area form button {
-  background-color: #2eb398;
+  background-color: #f79a88;
   padding: 10px;
   margin-top: 10px;
   outline: none;
   border: none;
-  color: #d7fcf5;
+  color: #fff;
   width: 150px;
   float: right;
 }
 .form_area form button:hover {
   transition: background 0.2s linear;
-  background-color: #45cfb3;
+  background-color: #fac3b8;
 }
 
 footer {

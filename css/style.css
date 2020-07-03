@@ -2,6 +2,7 @@
   padding: 0;
   margin: 0;
   font-family: sans-serif;
+  box-sizing: border-box;
 }
 
 body {
@@ -31,6 +32,15 @@ section {
 #checkbox-menu,
 .toggle {
   display: none;
+}
+
+.head {
+  padding: 0 0 90px;
+}
+@media (min-width: 768px) {
+  .head {
+    height: 100vh;
+  }
 }
 
 header {
@@ -122,12 +132,15 @@ header .active:hover {
   margin: 0 auto;
   width: 100px;
   height: 30px;
+  position: relative;
+  top: -3px;
 }
 
 .banner_part {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 30px 0 10px;
 }
 .banner_part .outer_circle {
   display: none;
@@ -147,6 +160,12 @@ header .active:hover {
     display: block;
   }
 }
+@media (min-width: 768px) {
+  .banner_part {
+    height: 100%;
+    justify-content: center;
+  }
+}
 
 .row_sota {
   display: flex;
@@ -158,6 +177,14 @@ header .active:hover {
   margin: 5px;
   width: 230px;
   height: 200px;
+}
+@media (max-width: 575px) {
+  .sota_item {
+    max-width: 180px;
+    min-width: 140px;
+    width: 100%;
+    height: 140px;
+  }
 }
 .sota_item img {
   width: 100%;
@@ -176,14 +203,22 @@ header .active:hover {
 }
 @media (min-width: 992px) {
   .about_us_part {
-    background-position: 50% 0;
     height: 1000px;
     padding: 90px 10px;
-    background-position: 20% 0;
+    background-position: 50% 0;
   }
   .about_us_part .gistogramma {
     max-width: 500px;
     height: 560px;
+  }
+  .about_us_part .list_item_sotra .smile {
+    font-size: 64px;
+  }
+}
+@media (max-width: 575px) {
+  .about_us_part {
+    padding: 0;
+    background-position: 35% 5%;
   }
 }
 .about_us_part .gistogramm_area {
@@ -195,7 +230,7 @@ header .active:hover {
   list-style: none;
   display: flex;
   flex-direction: row-reverse;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: flex-end;
   height: 700px;
   width: 100%;
@@ -211,6 +246,15 @@ header .active:hover {
 }
 .about_us_part .gistogramma p {
   font-size: 16px;
+}
+@media (max-width: 575px) {
+  .about_us_part .gistogramma {
+    padding: 90px 3px 20px;
+    height: 500px;
+  }
+  .about_us_part .gistogramma p {
+    font-size: 12px;
+  }
 }
 .about_us_part .gistogram_column {
   margin: 5px;
@@ -248,6 +292,17 @@ header .active:hover {
 .about_us_part .list_item .gistogram_column:hover {
   background-color: #9ba1b1;
 }
+@media (max-width: 575px) {
+  .about_us_part .list_item .gistogram_column {
+    padding: 2px;
+  }
+  .about_us_part .list_item .gistogram_column p {
+    font-size: 12px;
+  }
+  .about_us_part .list_item .gistogram_column .smile {
+    font-size: 28px;
+  }
+}
 .about_us_part .list_item_sotra {
   width: 100%;
   max-width: 130px;
@@ -269,6 +324,17 @@ header .active:hover {
 .about_us_part .list_item_sotra .gistogram_column:hover .smile {
   color: #d82f0e;
 }
+@media (max-width: 575px) {
+  .about_us_part .list_item_sotra .gistogram_column {
+    padding: 2px;
+  }
+  .about_us_part .list_item_sotra .gistogram_column p {
+    font-size: 12px;
+  }
+  .about_us_part .list_item_sotra .gistogram_column .smile {
+    font-size: 36px;
+  }
+}
 
 .service {
   margin-bottom: 50px;
@@ -282,7 +348,7 @@ header .active:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
+  padding: 8px;
   text-align: center;
 }
 .service_item p {
@@ -303,6 +369,14 @@ header .active:hover {
   padding: 10px;
   font-size: 40px;
   text-align: center;
+}
+@media (max-width: 575px) {
+  .service_item p {
+    font-size: 10px;
+  }
+  .service_item h4 {
+    font-size: 14px;
+  }
 }
 
 .callback_part {
@@ -353,7 +427,6 @@ header .active:hover {
   min-width: 200px;
   display: flex;
   flex-direction: column;
-  margin-right: 20px;
 }
 .form_area form input,
 .form_area form textarea {
@@ -377,6 +450,18 @@ header .active:hover {
 .form_area form button:hover {
   transition: background 0.2s linear;
   background-color: #fac3b8;
+}
+@media (max-width: 991px) {
+  .form_area {
+    flex-direction: column;
+    align-items: center;
+  }
+  .form_area .form {
+    margin-right: 20px;
+  }
+  .form_area .blockText {
+    display: none;
+  }
 }
 
 footer {

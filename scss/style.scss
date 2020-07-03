@@ -7,14 +7,15 @@ $screen_width_min_md: 768px;
 $screen_width_min_lg: 992px;
 $screen_width_min_xl: 1200px;
 // ****************************
-$screen_width_max_sm: 575px;
-$screen_width_max_md: 767px;
+$screen_width_max_xs: 575px;
+$screen_width_max_sm: 767px;
 $screen_width_max_lg: 991px;
 // ----------------------------
 * {
     padding: 0;
     margin: 0;
     font-family: sans-serif;
+    box-sizing: border-box;
 }
 
 body {
@@ -46,6 +47,13 @@ section {
     display: none;
 }
 
+.head {
+    padding: 0 0 90px;
+    @media (min-width: $screen_width_min_md) {
+        height: 100vh;
+    }
+}
+
 header {
     background-color: $brand_header_color;
     a {
@@ -64,7 +72,7 @@ header {
             color: $brand_text_color;
         }
     }
-    @media (max-width: $screen_width_max_md) {
+    @media (max-width: $screen_width_max_sm) {
         .burger {
             position: absolute;
             right: 10px;
@@ -134,16 +142,20 @@ header {
     margin: 0 auto;
     width: 100px;
     height: 30px;
+    position: relative;
+    top: -3px;
 }
 
 .banner_part {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 30px 0 10px;
     .outer_circle {
         display: none;
     }
-    @media (max-width: $screen_width_max_md) {
+    @media (max-width: $screen_width_max_sm) {
+        // padding: 10px 0;
         .small_circle {
             display: none;
         }
@@ -158,6 +170,10 @@ header {
             display: block;
         }
     }
+    @media (min-width: $screen_width_min_md) {
+        height: 100%;
+        justify-content: center;
+    }
 }
 
 .row_sota {
@@ -169,6 +185,12 @@ header {
     margin: 5px;
     width: 230px;
     height: 200px;
+    @media (max-width: $screen_width_max_xs) {
+        max-width: 180px;
+        min-width: 140px;
+        width: 100%;
+        height: 140px;
+    }
     img {
         width: 100%;
         height: 100%;
@@ -185,14 +207,20 @@ header {
     background: url(../assets/img/1587043052_30-p-foni-dlya-internet-magazinov-73.jpg) no-repeat 20% 0;
     padding: 10px;
     @media (min-width: $screen_width_min_lg) {
-        background-position: 50% 0;
         height: 1000px;
         padding: 90px 10px;
-        background-position: 20% 0;
+        background-position: 50% 0;
         .gistogramma {
             max-width: 500px;
             height: 560px;
         }
+        .list_item_sotra .smile {
+            font-size: 64px;
+        }
+    }
+    @media (max-width: $screen_width_max_xs) {
+        padding: 0;
+        background-position: 35% 5%;
     }
     .gistogramm_area {
         display: flex;
@@ -203,7 +231,7 @@ header {
         list-style: none;
         display: flex;
         flex-direction: row-reverse;
-        justify-content: space-between;
+        justify-content: space-around;
         align-items: flex-end;
         height: 700px;
         width: 100%;
@@ -218,6 +246,13 @@ header {
         }
         p {
             font-size: 16px;
+        }
+        @media (max-width: $screen_width_max_xs) {
+            padding: 90px 3px 20px;
+            height: 500px;
+            p {
+                font-size: 12px;
+            }
         }
     }
     .gistogram_column {
@@ -254,6 +289,15 @@ header {
             &:hover {
                 background-color: darken($brand_header_color, 10%);
             }
+            @media (max-width: $screen_width_max_xs) {
+                padding: 2px;
+                p {
+                    font-size: 12px;
+                }
+                .smile {
+                    font-size: 28px;
+                }
+            }
         }
     }
     .list_item_sotra {
@@ -275,6 +319,15 @@ header {
             &:hover .smile {
                 color: darken($brand_link_color, 30%);
             }
+            @media (max-width: $screen_width_max_xs) {
+                padding: 2px;
+                p {
+                    font-size: 12px;
+                }
+                .smile {
+                    font-size: 36px;
+                }
+            }
         }
     }
 }
@@ -291,7 +344,7 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px;
+    padding: 8px;
     text-align: center;
     p {
         font-size: 14px;
@@ -311,6 +364,14 @@ header {
         padding: 10px;
         font-size: 40px;
         text-align: center;
+    }
+    @media (max-width: $screen_width_max_xs) {
+        p {
+            font-size: 10px;
+        }
+        h4 {
+            font-size: 14px;
+        }
     }
 }
 
@@ -361,7 +422,6 @@ header {
         min-width: 200px;
         display: flex;
         flex-direction: column;
-        margin-right: 20px;
         input,
         textarea {
             padding: 10px;
@@ -384,6 +444,16 @@ header {
                 transition: background .2s linear;
                 background-color: lighten($brand_link_color, 10%);
             }
+        }
+    }
+    @media (max-width: $screen_width_max_lg) {
+        flex-direction: column;
+        align-items: center;
+        .form {
+            margin-right: 20px;
+        }
+        .blockText {
+            display: none;
         }
     }
 }

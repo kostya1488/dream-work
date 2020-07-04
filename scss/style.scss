@@ -2,6 +2,13 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+@mixin gradient_text {
+    display: inline-block;
+    background: linear-gradient(90deg, $brand_link_color, lighten($brand_link_color, 20%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent
+}
+
 $brand_header_color: #323232;
 $brand_link_color: #f79a88;
 $brand_text_color: #fff;
@@ -16,6 +23,7 @@ $screen_width_max_xs: 575px;
 $screen_width_max_sm: 767px;
 $screen_width_max_lg: 991px;
 // ----------------------------
+// === common ===
 * {
     padding: 0;
     margin: 0;
@@ -24,7 +32,13 @@ $screen_width_max_lg: 991px;
 
 body {
     overflow-x: hidden;
-    font-family: sans-serif;
+    @include Montserrat;
+}
+
+a,
+button {
+    cursor: pointer;
+    text-decoration: none;
 }
 
 h2 {
@@ -47,13 +61,7 @@ section {
     max-width: 1200px;
 }
 
-.gradient_text {
-    font-weight: 600;
-    background: linear-gradient(90deg, $brand_link_color, lighten($brand_link_color, 20%));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent
-}
-
+// === / common ===
 // === / header ===
 #checkbox-menu,
 .toggle {
@@ -61,14 +69,14 @@ section {
 }
 
 .head {
-    padding: 0 0 90px;
+    padding: 0;
     min-height: 100vh;
 }
 
 header {
+    font-family: sans-serif;
     background-color: $brand_header_color;
     a {
-        text-decoration: none;
         color: $brand_text_color;
         margin: 0 10px;
         transition: color .2s linear;
@@ -79,6 +87,7 @@ header {
     }
     .active {
         color: $brand_link_color;
+        // @include gradient_text();
         &:hover {
             color: $brand_text_color;
         }
@@ -403,37 +412,57 @@ header {
 }
 
 // === / about_part ===
-// === block_vacancies ===
+// === block_vacancies PAGE===
 .block_vacancies {
     color: $brand_text_color_dark;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 0 10px;
-    &__title,
-    &__subtitle {
+    &__title {
         text-align: center;
         font-size: 42px;
-        margin: 20px 0;
+        margin: 30px 0;
     }
     &__subtitle {
+        text-align: center;
         font-size: 20px;
-        max-width: 1200px;
+        line-height: 30px;
     }
     &__area {
         display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
+        justify-content: space-between;
+        margin-top: 40px;
     }
     .vacancy_item {
+        &+.vacancy_item {
+            margin-left: 40px;
+        }
         display: flex;
         flex-direction: column;
-        max-width: 350px;
-        width: 100%;
-        margin: 40px 20px;
+        justify-content: space-between;
+        width: 350px;
+        min-height: 500px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        transition: all .4s ease-in-out;
+        &:hover {
+            box-shadow: 0px 0px 35px 3px rgba(156, 156, 156, 1);
+            transform: scale(1.01);
+        }
         @media (max-width: $screen_width_max_xs) {
             margin: 40px 0px;
+        }
+        .banner_model {
+            background: url(../assets/vacansy/model.jpg) no-repeat 50% 50%;
+            background-size: cover;
+        }
+        .banner_admin {
+            background: url(../assets/vacansy/admin.jpg) no-repeat 50% 50%;
+            background-size: cover;
+        }
+        .banner_driver {
+            background: url(../assets/vacansy/driver.jpg) no-repeat 50% 50%;
+            background-size: cover;
         }
         &__banner {
             height: 200px;
@@ -450,54 +479,19 @@ header {
                 align-items: center;
             }
         }
-        .baner_model {
-            background: url(../assets/img/2.jpg) no-repeat 50% 50%;
-            background-size: cover;
-        }
-        .baner_admin {
-            background: url(../assets/img/anastasiia-liiman-nastia-devushka-poza-krasnoe-plate-plate-d.jpg) no-repeat 50% 50%;
-            background-size: cover;
-            // &::before {
-            //     content: "";
-            //     position: absolute;
-            //     width: 100%;
-            //     height: 100%;
-            //     background: rgba(0, 0, 0, 0.5);
-            // }
-        }
-        .baner_driver {
-            background: url(../assets/img/photo_2020-07-01_15-13-07.jpg) no-repeat 50% 50%;
-            background-size: cover;
-        }
-        .baner_cleaner {
-            background: url(../assets/img/507911z34b929ea.jpg) no-repeat 50% 50%;
-            background-size: cover;
-        }
         &__promo {
-            display: flex;
-            justify-content: space-between;
-            list-style: none;
-            padding: 20px 10px;
-            .col {
-                width: 100%;
-                @include Montserrat;
-                color: #616161;
+            padding: 16px;
+            &-title {
+                font-size: 18px;
+                margin-bottom: 10px;
+                color: $brand_text_color_dark;
+                text-align: center;
                 font-weight: 600;
-                &__title {
-                    font-size: 16px;
-                }
-                ul {
-                    list-style: none;
-                    font-size: 12px;
-                    font-weight: 500;
-                    li {
-                        margin: 10px 0;
-                        min-height: 30px;
-                    }
-                }
             }
-            .col_right {
-                text-align: end;
+            &-description {
+                font-size: 14px;
+                line-height: 22px;
+                color: $brand_text_color_dark;
             }
         }
         &__bottom {
@@ -509,41 +503,147 @@ header {
                 font-size: 16px;
                 font-weight: 600;
             }
-            button {
+            a {
+                text-align: center;
                 width: 226px;
                 border: none;
                 padding: 14px;
                 background: linear-gradient(90deg, $brand_link_color, lighten($brand_link_color, 20%));
-                // background-color: $brand_link_color;
-                box-shadow: 0 0 10px $brand_link_color;
+                box-shadow: 0 0 7px $brand_link_color;
                 color: darken($brand_link_color, 40%);
                 font-size: 16px;
                 font-weight: 600;
                 position: relative;
                 top: 24px;
-                transition: all .2s linear;
+                transition: all .4s ease-in-out;
+                outline: none;
                 &:hover {
-                    // background: lighten($brand_link_color, 10%);
-                    // box-shadow: none;
-                    background: linear-gradient(-90deg, $brand_link_color, lighten($brand_link_color, 20%));
-                    transform: scale(.9);
+                    transform: scale(1.05);
+                    box-shadow: 0 0 10px $brand_link_color;
                 }
             }
         }
     }
 }
 
-// === / block_vacancies ===
+// === / block_vacancies PAGE===
+// === vacancies_item PAGE ===
+.vacancy_preview {
+    color: $brand_text_color_dark;
+    .banner_model {
+        background: url(../assets/vacansy/model.jpg) no-repeat 0% 54%;
+        background-size: 100% auto;
+    }
+    .banner_admin {
+        background: url(../assets/vacansy/admin.jpg) no-repeat 0% 24%;
+        background-size: 100% auto;
+    }
+    .banner_driver {
+        background: url(../assets/vacansy/driver.jpg) no-repeat 0% 26%;
+        background-size: 100% auto;
+    }
+    &__banner {
+        height: 420px;
+        .darken {
+            height: 100%;
+            width: 100%;
+            background: #0000006e;
+        }
+        &-inner {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            // padding-left: 200px;
+        }
+        &-title,
+        &-subtitle {
+            color: $brand_text_color;
+            letter-spacing: 1px;
+        }
+        &-title {
+            hr {
+                display: inline-block;
+                width: 20px;
+                position: relative;
+                bottom: 5px;
+            }
+            font-size: 20px;
+        }
+        &-subtitle {
+            @include gradient_text;
+            font-size: 72px;
+            font-weight: 600;
+        }
+    }
+    &__navigation {
+        margin-top: 20px;
+        margin-bottom: 50px;
+        ul {
+            display: inline-flex;
+            list-style: none;
+            font-size: 20px;
+            font-weight: 600;
+            li+li {
+                margin-left: 10px;
+            }
+        }
+        a {
+            color: $brand_header_color;
+            transition: .2s;
+            &.active {
+                color: $brand_link_color;
+            }
+            &:hover {
+                color: $brand_link_color;
+            }
+        }
+    }
+    &__promo-text {
+        text-align: center;
+        font-size: 17px;
+        line-height: 32px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    &__description-list {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 80px;
+        margin-bottom: 80px;
+        ul {
+            list-style: disc;
+            li {
+                font-size: 20px;
+                line-height: 32px;
+                margin-left: 20px;
+            }
+            .title {
+                margin-left: 0;
+                margin-bottom: 20px;
+                margin-top: 10px;
+                list-style: none;
+                font-size: 22px;
+                font-weight: 600;
+                border-bottom: 3px solid;
+                border-top: 3px solid;
+                border-image: linear-gradient(90deg, $brand_link_color, lighten($brand_link_color, 20%)) 1;
+            }
+        }
+    }
+}
+
+// === / vacancies_item PAGE===
 // === callback_part ===
 .callback_part {
     background-color: #323232;
+    text-align: center;
     p {
-        text-align: center;
         color: #a0a0a0;
     }
     .h2 {
         font-size: 42px;
-        // color: #e0e0e0;
+        font-weight: 600;
+        @include gradient_text;
     }
 }
 
@@ -555,6 +655,10 @@ header {
         max-width: 280px;
         width: 100%;
         padding: 10px;
+        span {
+            font-weight: 600;
+            @include gradient_text;
+        }
         p {
             text-align: start;
         }
@@ -590,27 +694,39 @@ header {
             margin-top: 10px;
             resize: none;
             outline: none;
+            &:focus {
+                background-color: #686565;
+            }
+        }
+         ::-webkit-input-placeholder {
+            @include gradient_text;
+            font-weight: 600;
+        }
+         ::-moz-placeholder {
+            @include gradient_text;
+            font-weight: 600;
+        }
+         :-moz-placeholder {
+            @include gradient_text;
+            font-weight: 600;
+        }
+         :-ms-input-placeholder {
+            @include gradient_text;
+            font-weight: 600;
         }
         button {
-            // background-color: $brand_link_color;
             background: linear-gradient(90deg, $brand_link_color, lighten($brand_link_color, 20%));
-            // background-color: $brand_link_color;
-            box-shadow: 0 0 10px $brand_link_color;
+            box-shadow: 0 0 7px $brand_link_color;
             color: darken($brand_link_color, 40%);
             padding: 10px;
             margin-top: 10px;
             outline: none;
             border: none;
-            color: $brand_text_color;
-            box-shadow: 0 0 10px $brand_link_color;
             width: 150px;
             float: right;
-            transition: all .2s linear;
+            transition: all .4s ease-in-out;
             &:hover {
-                // background: lighten($brand_link_color, 10%);
-                // box-shadow: none;
-                background: linear-gradient(-90deg, $brand_link_color, lighten($brand_link_color, 20%));
-                transform: scale(.9);
+                transform: scale(1.05);
             }
         }
     }

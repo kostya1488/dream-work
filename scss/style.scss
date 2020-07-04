@@ -14,14 +14,15 @@ $brand_link_color: #f79a88;
 $brand_text_color: #fff;
 $brand_text_color_dark: #616161;
 // ----------------------------
-$screen_width_min_sm: 576px;
-$screen_width_min_md: 768px;
-$screen_width_min_lg: 992px;
-$screen_width_min_xl: 1200px;
+$screen_sm: 576px;
+$screen_md: 768px;
+$screen_lg: 992px;
+$screen_xl: 1200px;
 // ****************************
-$screen_width_max_xs: 575px;
-$screen_width_max_sm: 767px;
-$screen_width_max_lg: 991px;
+$screen_xs_max: 575px;
+$screen_sm_max: 767px;
+$screen_md_max: 991px;
+$screen_lg_max: 1999px;
 // ----------------------------
 // === common ===
 * {
@@ -54,6 +55,9 @@ p {
 
 section {
     padding: 90px 10px;
+    @media (max-width: $screen_xs_max) {
+        padding: 50px 10px;
+    }
 }
 
 .wrapper {
@@ -92,7 +96,7 @@ header {
             color: $brand_text_color;
         }
     }
-    @media (max-width: $screen_width_max_sm) {
+    @media (max-width: $screen_sm_max) {
         .burger {
             position: absolute;
             right: 10px;
@@ -177,13 +181,13 @@ header {
     .outer_circle {
         display: none;
     }
-    @media (max-width: $screen_width_max_sm) {
+    @media (max-width: $screen_sm_max) {
         // padding: 10px 0;
         .small_circle {
             display: none;
         }
     }
-    @media (max-width: $screen_width_max_lg) {
+    @media (max-width: $screen_lg_max) {
         .middle_circle {
             display: none;
         }
@@ -193,7 +197,7 @@ header {
             display: block;
         }
     }
-    @media (min-width: $screen_width_min_md) {
+    @media (min-width: $screen_md) {
         height: 100%;
         justify-content: center;
     }
@@ -208,7 +212,7 @@ header {
     margin: 5px;
     width: 230px;
     height: 200px;
-    @media (max-width: $screen_width_max_xs) {
+    @media (max-width: $screen_xs_max) {
         max-width: 180px;
         min-width: 140px;
         width: 100%;
@@ -231,7 +235,7 @@ header {
 .promo_part {
     background: url(../assets/img/1587043052_30-p-foni-dlya-internet-magazinov-73.jpg) no-repeat 20% 0;
     padding: 10px;
-    @media (min-width: $screen_width_min_lg) {
+    @media (min-width: $screen_lg) {
         height: 1000px;
         padding: 90px 10px;
         background-position: 50% 0;
@@ -243,7 +247,7 @@ header {
             font-size: 64px;
         }
     }
-    @media (max-width: $screen_width_max_xs) {
+    @media (max-width: $screen_xs_max) {
         padding: 0;
         background-position: 35% 5%;
     }
@@ -272,11 +276,12 @@ header {
         p {
             font-size: 16px;
         }
-        @media (max-width: $screen_width_max_xs) {
+        @media (max-width: $screen_xs_max) {
             padding: 90px 3px 20px;
             height: 500px;
             p {
-                font-size: 12px;
+                font-size: 13px;
+                font-weight: 600;
             }
         }
     }
@@ -314,7 +319,7 @@ header {
             &:hover {
                 background-color: lighten($brand_header_color, 30%);
             }
-            @media (max-width: $screen_width_max_xs) {
+            @media (max-width: $screen_xs_max) {
                 padding: 2px;
                 p {
                     font-size: 12px;
@@ -349,7 +354,7 @@ header {
                 transform: scale(1.3);
                 margin: 10px;
             }
-            @media (max-width: $screen_width_max_xs) {
+            @media (max-width: $screen_xs_max) {
                 padding: 2px;
                 p {
                     font-size: 12px;
@@ -366,6 +371,23 @@ header {
 // === about_part ===
 .about_part {
     color: $brand_text_color_dark;
+    text-align: center;
+    &__title {
+        margin-bottom: 30px;
+        font-size: 24px;
+        line-height: 34px;
+        font-weight: 500;
+    }
+    &__description {
+        font-size: 14px;
+        line-height: 24px;
+    }
+    @media (min-width: $screen_sm) {
+        &__description {
+            font-size: 16px;
+            line-height: 26px;
+        }
+    }
 }
 
 .service {
@@ -382,13 +404,14 @@ header {
     align-items: center;
     padding: 8px;
     text-align: center;
-    p {
+    margin-bottom: 20px;
+    &__description {
         font-size: 14px;
     }
-    h4 {
+    &__title {
         margin: 15px 0;
     }
-    .circle {
+    &__circle {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -401,12 +424,20 @@ header {
         font-size: 40px;
         text-align: center;
     }
-    @media (max-width: $screen_width_max_xs) {
-        p {
+    @media (max-width: $screen_xs_max) {
+        padding: 4px;
+        &__description {
             font-size: 10px;
         }
-        h4 {
+        &__title {
             font-size: 14px;
+            font-weight: 500;
+        }
+        &__circle {
+            width: 50px;
+            height: 50px;
+            padding: 4px;
+            font-size: 28px;
         }
     }
 }
@@ -419,6 +450,7 @@ header {
     flex-direction: column;
     align-items: center;
     padding: 0 10px;
+    margin-bottom: 40px;
     &__title {
         text-align: center;
         font-size: 42px;
@@ -426,31 +458,39 @@ header {
     }
     &__subtitle {
         text-align: center;
-        font-size: 20px;
+        font-size: 16px;
         line-height: 30px;
     }
     &__area {
         display: flex;
-        justify-content: space-between;
-        margin-top: 40px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    @media (max-width: $screen_xs_max) {
+        &__title {
+            font-size: 24px;
+        }
+        &__subtitle {
+            font-size: 14px;
+            line-height: 24px;
+        }
     }
     .vacancy_item {
-        &+.vacancy_item {
-            margin-left: 40px;
-        }
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        width: 350px;
+        max-width: 350px;
+        width: 100%;
         min-height: 500px;
+        margin: 40px 20px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         transition: all .4s ease-in-out;
-        &:hover {
-            box-shadow: 0px 0px 35px 3px rgba(156, 156, 156, 1);
-            transform: scale(1.01);
-        }
-        @media (max-width: $screen_width_max_xs) {
+        @media (max-width: $screen_xs_max) {
             margin: 40px 0px;
+        }
+        &:hover {
+            box-shadow: 0px 0px 18px 3px rgba(156, 156, 156, 1);
+            transform: scale(1.01);
         }
         .banner_model {
             background: url(../assets/vacansy/model.jpg) no-repeat 50% 50%;
@@ -492,6 +532,9 @@ header {
                 font-size: 14px;
                 line-height: 22px;
                 color: $brand_text_color_dark;
+                @media (max-width: $screen_xs_max) {
+                    font-size: 12px;
+                }
             }
         }
         &__bottom {
@@ -532,15 +575,29 @@ header {
     color: $brand_text_color_dark;
     .banner_model {
         background: url(../assets/vacansy/model.jpg) no-repeat 0% 54%;
-        background-size: 100% auto;
+        background-size: cover;
     }
     .banner_admin {
-        background: url(../assets/vacansy/admin.jpg) no-repeat 0% 24%;
-        background-size: 100% auto;
+        background: url(../assets/vacansy/admin.jpg) no-repeat 53% 0;
+        background-size: cover;
     }
     .banner_driver {
         background: url(../assets/vacansy/driver.jpg) no-repeat 0% 26%;
-        background-size: 100% auto;
+        background-size: cover;
+    }
+    @media (max-width: $screen_xs_max) {
+        .banner_driver {
+            background: url(../assets/vacansy/driver.jpg) no-repeat 100% 0;
+            background-size: auto 100%;
+        }
+        .banner_admin {
+            background: url(../assets/vacansy/admin.jpg) no-repeat 53% 0;
+            background-size: auto 100%;
+        }
+        .banner_model {
+            background: url(../assets/vacansy/model.jpg) no-repeat 63% 0;
+            background-size: auto 100%;
+        }
     }
     &__banner {
         height: 420px;
@@ -553,7 +610,6 @@ header {
             display: flex;
             flex-direction: column;
             justify-content: center;
-            // padding-left: 200px;
         }
         &-title,
         &-subtitle {
@@ -574,6 +630,30 @@ header {
             font-size: 72px;
             font-weight: 600;
         }
+        @media (max-width: $screen_md_max) {
+            &-inner {
+                justify-content: flex-end;
+            }
+            &-title {
+                padding-left: 16px;
+                padding-bottom: 16px;
+            }
+            &-subtitle {
+                font-size: 52px;
+            }
+        }
+        @media (max-width: $screen_xs_max) {
+            &-title {
+                padding-left: 16px;
+                padding-bottom: 16px;
+                hr {
+                    width: 10px;
+                }
+            }
+            &-subtitle {
+                font-size: 32px;
+            }
+        }
     }
     &__navigation {
         margin-top: 20px;
@@ -585,6 +665,10 @@ header {
             font-weight: 600;
             li+li {
                 margin-left: 10px;
+            }
+            @media (max-width: $screen_xs_max) {
+                font-size: 14px;
+                padding-left: 16px;
             }
         }
         a {
@@ -604,6 +688,12 @@ header {
         line-height: 32px;
         margin-top: 20px;
         margin-bottom: 20px;
+        @media (max-width: $screen_xs_max) {
+            font-size: 14px;
+            line-height: 23px;
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
     }
     &__description-list {
         display: flex;
@@ -619,6 +709,7 @@ header {
             }
             .title {
                 margin-left: 0;
+                padding-left: 10px;
                 margin-bottom: 20px;
                 margin-top: 10px;
                 list-style: none;
@@ -627,6 +718,24 @@ header {
                 border-bottom: 3px solid;
                 border-top: 3px solid;
                 border-image: linear-gradient(90deg, $brand_link_color, lighten($brand_link_color, 20%)) 1;
+            }
+        }
+        @media (max-width: $screen_md_max) {
+            flex-direction: column;
+            padding: 0 10px;
+            margin: 0;
+        }
+        @media (max-width: $screen_xs_max) {
+            ul {
+                li {
+                    font-size: 16px;
+                    line-height: 26px;
+                }
+                .title {
+                    font-size: 18px;
+                    border-bottom: 2px solid;
+                    border-top: 2px solid;
+                }
             }
         }
     }
@@ -644,6 +753,16 @@ header {
         font-size: 42px;
         font-weight: 600;
         @include gradient_text;
+    }
+    @media (max-width: $screen_xs_max) {
+        .h2 {
+            font-size: 28px;
+            line-height: 34px;
+        }
+        p {
+            font-size: 14px;
+            line-height: 24px;
+        }
     }
 }
 
@@ -730,7 +849,7 @@ header {
             }
         }
     }
-    @media (max-width: $screen_width_max_lg) {
+    @media (max-width: $screen_lg_max) {
         flex-direction: column;
         align-items: center;
         .form {

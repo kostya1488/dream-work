@@ -22,9 +22,9 @@
                 <label for="checkbox-menu">
                 <ul class="menu touch">
                     <li class="menu_item"><a class="" href="/">Главная</a></li>
-                    <li class="menu_item"><a class="active" href="">Вакансии</a></li>
+                    <li class="menu_item"><a class="active" href="vacancies.html">Вакансии</a></li>
                     <li class="logo"><a href="/">DW</a></li>
-                    <li class="menu_item"><a class="" href="index.html#about">Подробнее</a></li>
+                    <li class="menu_item"><a class="" href="/#about">Подробнее</a></li>
                     <li class="menu_item"><a class="" href="#anketa">Анкета</a></li>
                 </ul>
                 <div class="toggle">DW <span class="burger">☰</span> </div>
@@ -114,18 +114,21 @@
         <p class="h2">Get In Touch</p>
         <p>In order to get in touch use the contact form below:</p>
         <div class="callback_part__content wrapper">
+            <div id="area_after_form_send">
+                <div>Спасибо! <br> Ваша заявка успешно отправлена </div>
+            </div>
             <div class="form_area">
-                <form action="">
-                    <input type="text" placeholder="Name">
-                    <input type="email" placeholder="Email">
-                    <input type="tel" placeholder="Phone number">
-                    <textarea name="" id="" cols="30" rows="10" placeholder="Message"></textarea>
+                <form id="callback_forma">
+                    <input name="name" type="text" placeholder="Name">
+                    <input name="email" type="email" placeholder="Email">
+                    <input name="tel" type="tel" placeholder="Phone number">
+                    <textarea name="text" id="" cols="30" rows="10" placeholder="Message"></textarea>
                     <div>
-                        <button>SEND</button>
+                        <button onclick="ajaxFormRequest('callback_forma')">SEND</button>
                     </div>
                 </form>
                 <div class="blockText">
-                    <p><span class="gradient_text">Quisque Hendrerit:</span> purus dapibus, ornare nibh vitae, viverra nibh. Fusce vitae aliquam tellus. Proin sit amet volutpat libero. Nulla sed nunc et tortor luctus faucibus morbi vitae. </p>
+                    <p><span class="">Quisque Hendrerit:</span> purus dapibus, ornare nibh vitae, viverra nibh. Fusce vitae aliquam tellus. Proin sit amet volutpat libero. Nulla sed nunc et tortor luctus faucibus morbi vitae. </p>
                     <div class="contacts">
                         <p><i class="fas fa-map-marker-alt"></i>Elm St. 14/05 Lost City</p>
                         <p><i class="fas fa-phone-alt"></i>+380996661488</p>
@@ -142,7 +145,7 @@
     </footer>
 
     <!-- ------------------------------------------------------------------------------------ -->
-    <script src="js/script.js"></script>
+    <!-- <script src="js/script.js"></script> -->
 </body>
 
 </html>

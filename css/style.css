@@ -48,6 +48,9 @@ section {
 .head {
   padding: 0;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 header {
@@ -117,6 +120,12 @@ header .active:hover {
   }
 }
 
+.banner_conteiner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .menu {
   list-style: none;
   display: flex;
@@ -147,7 +156,6 @@ header .active:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 30px 0 10px;
 }
 .banner_part .outer_circle {
   display: none;
@@ -204,19 +212,56 @@ header .active:hover {
   transform: scale(1.1);
 }
 
+.head_bottom {
+  display: flex;
+  background-color: #616161;
+}
+.head_bottom .contacts {
+  flex: 3;
+}
+.head_bottom .contacts a {
+  display: inline-block;
+  background: linear-gradient(90deg, #f79a88, #fdebe8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 600;
+  font-size: 16px;
+}
+.head_bottom .contacts i {
+  margin-right: 10px;
+}
+.head_bottom .messengers {
+  flex: 1;
+  background: linear-gradient(90deg, #f79a88, #fdebe8);
+}
+.head_bottom .messengers ul {
+  justify-content: space-evenly;
+}
+.head_bottom .messengers a {
+  font-size: 48px;
+  color: #323232;
+}
+.head_bottom ul {
+  height: 100px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+}
+
 .promo_part {
-  background: url(../assets/img/1587043052_30-p-foni-dlya-internet-magazinov-73.jpg) no-repeat 20% 0;
+  background: url(../assets/index/banner.jpg) no-repeat 20% 0%;
+  background-size: auto 100%;
   padding: 10px;
 }
 @media (min-width: 992px) {
   .promo_part {
-    height: 1000px;
-    padding: 90px 10px;
-    background-position: 50% 0;
+    height: 100vh;
   }
   .promo_part .gistogramma {
     max-width: 500px;
     height: 560px;
+    flex-direction: row-reverse;
   }
   .promo_part .list_item_sotra .smile {
     font-size: 64px;
@@ -225,21 +270,20 @@ header .active:hover {
 @media (max-width: 575px) {
   .promo_part {
     padding: 0;
-    background-position: 35% 5%;
   }
 }
 .promo_part .gistogramm_area {
   display: flex;
   justify-content: flex-end;
-  height: 63%;
+  align-items: flex-end;
+  height: 100%;
 }
 .promo_part .gistogramma {
+  height: 560px;
   list-style: none;
   display: flex;
-  flex-direction: row-reverse;
   justify-content: space-around;
   align-items: flex-end;
-  height: 700px;
   width: 100%;
   padding: 20px 10px;
   background: linear-gradient(to top, #171717e6, transparent);
@@ -557,28 +601,28 @@ header .active:hover {
   color: #616161;
 }
 .vacancy_preview .banner_model {
-  background: url(../assets/vacansy/model.jpg) no-repeat 0% 54%;
+  background: url(../assets/vacansy_items/model.jpg) no-repeat 0 0;
   background-size: cover;
 }
 .vacancy_preview .banner_admin {
-  background: url(../assets/vacansy/admin.jpg) no-repeat 53% 0;
+  background: url(../assets/vacansy_items/admin.jpg) no-repeat 0 0;
   background-size: cover;
 }
 .vacancy_preview .banner_driver {
-  background: url(../assets/vacansy/driver.jpg) no-repeat 0% 26%;
+  background: url(../assets/vacansy_items/driver.jpg) no-repeat 0 0;
   background-size: cover;
 }
 @media (max-width: 575px) {
   .vacancy_preview .banner_driver {
-    background: url(../assets/vacansy/driver.jpg) no-repeat 100% 0;
+    background: url(../assets/vacansy_items/driverb_mob.jpg) no-repeat 0 0;
     background-size: auto 100%;
   }
   .vacancy_preview .banner_admin {
-    background: url(../assets/vacansy/admin.jpg) no-repeat 53% 0;
+    background: url(../assets/vacansy_items/adminb_mob.jpg) no-repeat 0 0;
     background-size: auto 100%;
   }
   .vacancy_preview .banner_model {
-    background: url(../assets/vacansy/model.jpg) no-repeat 63% 0;
+    background: url(../assets/vacansy_items/modelb_mob.jpg) no-repeat 0 0;
     background-size: auto 100%;
   }
 }
@@ -733,7 +777,8 @@ header .active:hover {
   background-color: #323232;
   text-align: center;
 }
-.callback_part p {
+.callback_part p,
+.callback_part a {
   color: #a0a0a0;
 }
 .callback_part .h2 {
@@ -753,6 +798,15 @@ header .active:hover {
     font-size: 14px;
     line-height: 24px;
   }
+}
+
+#area_after_form_send {
+  display: none;
+  font-size: 28px;
+  line-height: 34px;
+  background: linear-gradient(90deg, #f79a88, #fdebe8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .form_area {
@@ -778,8 +832,13 @@ header .active:hover {
 .form_area .blockText .contacts {
   margin-top: 50px;
 }
-.form_area .blockText .contacts p {
+.form_area .blockText .contacts ul {
+  list-style: none;
+  text-align: start;
+}
+.form_area .blockText .contacts a {
   margin-top: 10px;
+  line-height: 26px;
 }
 .form_area .blockText .contacts i {
   color: #f79a88;
@@ -855,7 +914,7 @@ header .active:hover {
 .form_area form button:hover {
   transform: scale(1.05);
 }
-@media (max-width: 1999px) {
+@media (max-width: 991px) {
   .form_area {
     flex-direction: column;
     align-items: center;

@@ -75,6 +75,9 @@ section {
 .head {
     padding: 0;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 header {
@@ -145,6 +148,12 @@ header {
     }
 }
 
+.banner_conteiner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .menu {
     list-style: none;
     display: flex;
@@ -161,7 +170,6 @@ header {
 
 .triangle {
     display: block;
-    // background-color: $brand_link_color;
     background: linear-gradient(90deg, #f79a88, #fdebe8);
     clip-path: polygon(100% 0, 50% 80%, 0 0);
     margin: 0 auto;
@@ -177,7 +185,7 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 30px 0 10px;
+    // padding: 30px 0 10px;
     .outer_circle {
         display: none;
     }
@@ -230,39 +238,73 @@ header {
     }
 }
 
+.head_bottom {
+    display: flex;
+    background-color: $brand_text_color_dark;
+    .contacts {
+        flex: 3;
+        a {
+            @include gradient_text();
+            font-weight: 600;
+            font-size: 16px;
+        }
+        i {
+            margin-right: 10px;
+        }
+    }
+    .messengers {
+        flex: 1;
+        background: linear-gradient(90deg, $brand_link_color, lighten($brand_link_color, 20%));
+        ul {
+            justify-content: space-evenly;
+        }
+        a {
+            font-size: 48px;
+            color: $brand_header_color;
+        }
+    }
+    ul {
+        height: 100px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        list-style: none;
+    }
+}
+
 // === / banner part ===
 // === promo_part ===
 .promo_part {
-    background: url(../assets/img/1587043052_30-p-foni-dlya-internet-magazinov-73.jpg) no-repeat 20% 0;
+    background: url(../assets/index/banner.jpg) no-repeat 20% 0%;
+    background-size: auto 100%;
     padding: 10px;
     @media (min-width: $screen_lg) {
-        height: 1000px;
-        padding: 90px 10px;
-        background-position: 50% 0;
+        height: 100vh;
         .gistogramma {
             max-width: 500px;
             height: 560px;
+            flex-direction: row-reverse;
         }
         .list_item_sotra .smile {
             font-size: 64px;
         }
     }
     @media (max-width: $screen_xs_max) {
+        // background-position: 0 0;
         padding: 0;
-        background-position: 35% 5%;
     }
     .gistogramm_area {
         display: flex;
         justify-content: flex-end;
-        height: 63%;
+        align-items: flex-end;
+        height: 100%;
     }
     .gistogramma {
+        height: 560px;
         list-style: none;
         display: flex;
-        flex-direction: row-reverse;
         justify-content: space-around;
         align-items: flex-end;
-        height: 700px;
         width: 100%;
         padding: 20px 10px;
         background: linear-gradient(to top, #171717e6, transparent);
@@ -574,28 +616,28 @@ header {
 .vacancy_preview {
     color: $brand_text_color_dark;
     .banner_model {
-        background: url(../assets/vacansy/model.jpg) no-repeat 0% 54%;
+        background: url(../assets/vacansy_items/model.jpg) no-repeat 0 0;
         background-size: cover;
     }
     .banner_admin {
-        background: url(../assets/vacansy/admin.jpg) no-repeat 53% 0;
+        background: url(../assets/vacansy_items/admin.jpg) no-repeat 0 0;
         background-size: cover;
     }
     .banner_driver {
-        background: url(../assets/vacansy/driver.jpg) no-repeat 0% 26%;
+        background: url(../assets/vacansy_items/driver.jpg) no-repeat 0 0;
         background-size: cover;
     }
     @media (max-width: $screen_xs_max) {
         .banner_driver {
-            background: url(../assets/vacansy/driver.jpg) no-repeat 100% 0;
+            background: url(../assets/vacansy_items/driverb_mob.jpg) no-repeat 0 0;
             background-size: auto 100%;
         }
         .banner_admin {
-            background: url(../assets/vacansy/admin.jpg) no-repeat 53% 0;
+            background: url(../assets/vacansy_items/adminb_mob.jpg) no-repeat 0 0;
             background-size: auto 100%;
         }
         .banner_model {
-            background: url(../assets/vacansy/model.jpg) no-repeat 63% 0;
+            background: url(../assets/vacansy_items/modelb_mob.jpg) no-repeat 0 0;
             background-size: auto 100%;
         }
     }
@@ -746,7 +788,8 @@ header {
 .callback_part {
     background-color: #323232;
     text-align: center;
-    p {
+    p,
+    a {
         color: #a0a0a0;
     }
     .h2 {
@@ -766,6 +809,15 @@ header {
     }
 }
 
+#area_after_form_send {
+    display: none;
+    font-size: 28px;
+    line-height: 34px;
+    background: linear-gradient(90deg, $brand_link_color, lighten($brand_link_color, 20%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 .form_area {
     display: flex;
     justify-content: space-evenly;
@@ -783,8 +835,13 @@ header {
         }
         .contacts {
             margin-top: 50px;
-            p {
+            ul {
+                list-style: none;
+                text-align: start;
+            }
+            a {
                 margin-top: 10px;
+                line-height: 26px;
             }
             i {
                 color: $brand_link_color;
@@ -849,7 +906,7 @@ header {
             }
         }
     }
-    @media (max-width: $screen_lg_max) {
+    @media (max-width: $screen_md_max) {
         flex-direction: column;
         align-items: center;
         .form {

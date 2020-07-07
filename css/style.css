@@ -143,8 +143,8 @@ header .active:hover {
 }
 
 .triangle {
-  display: block;
   background: linear-gradient(90deg, #f79a88, #fdebe8);
+  display: block;
   -webkit-clip-path: polygon(100% 0, 50% 80%, 0 0);
           clip-path: polygon(100% 0, 50% 80%, 0 0);
   margin: 0 auto;
@@ -152,31 +152,31 @@ header .active:hover {
   height: 30px;
 }
 
-.banner_part {
+.sota_area {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.banner_part .outer_circle {
+.sota_area .outer_circle {
   display: none;
 }
 @media (max-width: 767px) {
-  .banner_part .small_circle {
+  .sota_area .small_circle {
     display: none;
   }
 }
-@media (max-width: 1999px) {
-  .banner_part .middle_circle {
+@media (max-width: 991px) {
+  .sota_area .middle_circle {
     display: none;
   }
 }
 @media (min-width: 1480px) {
-  .banner_part .outer_circle {
+  .sota_area .outer_circle {
     display: block;
   }
 }
 @media (min-width: 768px) {
-  .banner_part {
+  .sota_area {
     height: 100%;
     justify-content: center;
   }
@@ -220,12 +220,21 @@ header .active:hover {
   flex: 2;
 }
 .head_bottom .contacts a {
+  display: flex;
   display: inline-block;
   background: linear-gradient(90deg, #f79a88, #fdebe8);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: 600;
   font-size: 16px;
+  transition: 0.4s;
+}
+.head_bottom .contacts a img {
+  width: 20px;
+  fill: #f79a88;
+}
+.head_bottom .contacts a:hover {
+  transform: scale(1.1);
 }
 .head_bottom .contacts i {
   margin-right: 10px;
@@ -241,6 +250,12 @@ header .active:hover {
 .head_bottom .messengers a {
   font-size: 36px;
   color: #323232;
+}
+.head_bottom .messengers a i {
+  transition: 0.4s;
+}
+.head_bottom .messengers a i:hover {
+  transform: scale(1.1);
 }
 .head_bottom ul {
   height: 70px;
@@ -259,7 +274,7 @@ header .active:hover {
 }
 
 .promo_part {
-  background: url(../assets/index/banner.jpg) no-repeat 20% 0%;
+  background: url(../assets/banner/banner.jpg) no-repeat 20% 0%;
   background-size: auto 100%;
   padding: 10px;
 }
@@ -618,18 +633,18 @@ header .active:hover {
   background: url(../assets/vacansy_items/driver.jpg) no-repeat 0 0;
   background-size: cover;
 }
-@media (max-width: 575px) {
+@media (max-width: 1999px) {
   .vacancy_preview .banner_model {
-    background: url(../assets/vacansy_items/modelb_mob.jpg) no-repeat 0 0;
-    background-size: auto 100%;
+    background: url(../assets/vacansy_items/modelb_mob.jpg) no-repeat center top;
+    background-size: auto;
   }
   .vacancy_preview .banner_admin {
-    background: url(../assets/vacansy_items/adminb_mob.jpg) no-repeat 0 0;
-    background-size: auto 100%;
+    background: url(../assets/vacansy_items/adminb_mob.jpg) no-repeat center top;
+    background-size: auto;
   }
   .vacancy_preview .banner_driver {
-    background: url(../assets/vacansy_items/driverb_mob.jpg) no-repeat 0 0;
-    background-size: auto 100%;
+    background: url(../assets/vacansy_items/driverb_mob.jpg) no-repeat left top;
+    background-size: auto;
   }
 }
 .vacancy_preview__banner {

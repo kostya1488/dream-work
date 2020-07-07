@@ -648,14 +648,14 @@ header {
         background-size: cover;
     }
     .banner_admin {
-        background: url(../assets/vacansy_items/admin.jpg) no-repeat 0 0;
+        background: url(../assets/vacansy_items/admin.jpg) no-repeat center top;
         background-size: cover;
     }
     .banner_driver {
-        background: url(../assets/vacansy_items/driver.jpg) no-repeat 0 0;
+        background: url(../assets/vacansy_items/driver.jpg) no-repeat right top;
         background-size: cover;
     }
-    @media (max-width: $screen_lg_max) {
+    @media (max-width: $screen_xs_max) {
         .banner_model {
             background: url(../assets/vacansy_items/modelb_mob.jpg) no-repeat center top;
             background-size: auto;
@@ -733,12 +733,12 @@ header {
             list-style: none;
             font-size: 20px;
             font-weight: 600;
+            padding-left: 16px;
             li+li {
                 margin-left: 10px;
             }
             @media (max-width: $screen_xs_max) {
                 font-size: 14px;
-                padding-left: 16px;
             }
         }
         a {

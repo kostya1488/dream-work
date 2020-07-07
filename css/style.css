@@ -626,14 +626,14 @@ header .active:hover {
   background-size: cover;
 }
 .vacancy_preview .banner_admin {
-  background: url(../assets/vacansy_items/admin.jpg) no-repeat 0 0;
+  background: url(../assets/vacansy_items/admin.jpg) no-repeat center top;
   background-size: cover;
 }
 .vacancy_preview .banner_driver {
-  background: url(../assets/vacansy_items/driver.jpg) no-repeat 0 0;
+  background: url(../assets/vacansy_items/driver.jpg) no-repeat right top;
   background-size: cover;
 }
-@media (max-width: 1999px) {
+@media (max-width: 575px) {
   .vacancy_preview .banner_model {
     background: url(../assets/vacansy_items/modelb_mob.jpg) no-repeat center top;
     background-size: auto;
@@ -714,6 +714,7 @@ header .active:hover {
   list-style: none;
   font-size: 20px;
   font-weight: 600;
+  padding-left: 16px;
 }
 .vacancy_preview__navigation ul li + li {
   margin-left: 10px;
@@ -721,7 +722,6 @@ header .active:hover {
 @media (max-width: 575px) {
   .vacancy_preview__navigation ul {
     font-size: 14px;
-    padding-left: 16px;
   }
 }
 .vacancy_preview__navigation a {

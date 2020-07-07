@@ -1,3 +1,4 @@
+//=============================================== mixin ===============================================
 @mixin Montserrat {
     font-family: 'Montserrat', sans-serif;
 }
@@ -9,22 +10,23 @@
     -webkit-text-fill-color: transparent
 }
 
+//============================================== / mixin ===============================================
+//=============================================== variables ============================================
 $brand_header_color: #323232;
 $brand_link_color: #f79a88;
 $brand_text_color: #fff;
 $brand_text_color_dark: #616161;
-// ----------------------------
+// -----------------------------------------------------------------------------------------------------
 $screen_sm: 576px;
 $screen_md: 768px;
 $screen_lg: 992px;
 $screen_xl: 1200px;
-// ****************************
 $screen_xs_max: 575px;
 $screen_sm_max: 767px;
 $screen_md_max: 991px;
 $screen_lg_max: 1999px;
-// ----------------------------
-// === common ===
+//============================================== / variables ===========================================
+// ============================================= common ================================================
 * {
     padding: 0;
     margin: 0;
@@ -65,8 +67,8 @@ section {
     max-width: 1200px;
 }
 
-// === / common ===
-// === / header ===
+// ================================================================ / common ==================================================================
+// ================================================================== header ==================================================================
 #checkbox-menu,
 .toggle {
     display: none;
@@ -81,6 +83,7 @@ section {
 }
 
 header {
+    display: flex;
     font-family: sans-serif;
     background-color: $brand_header_color;
     a {
@@ -140,6 +143,7 @@ header {
             transition: height .3s linear;
         }
         .menu_item {
+            flex: 1;
             display: flex;
             justify-content: center;
             opacity: 0;
@@ -175,12 +179,10 @@ header {
     margin: 0 auto;
     width: 100px;
     height: 30px;
-    position: relative;
-    top: -3px;
 }
 
-// === / header ===
-// === banner part ===
+// ================================================================== / header ==================================================================
+// ================================================================== banner part ==================================================================
 .banner_part {
     display: flex;
     flex-direction: column;
@@ -240,9 +242,9 @@ header {
 
 .head_bottom {
     display: flex;
-    background-color: $brand_text_color_dark;
+    background-color: $brand_header_color;
     .contacts {
-        flex: 3;
+        flex: 2;
         a {
             @include gradient_text();
             font-weight: 600;
@@ -250,6 +252,7 @@ header {
         }
         i {
             margin-right: 10px;
+            font-size: 18px;
         }
     }
     .messengers {
@@ -259,21 +262,29 @@ header {
             justify-content: space-evenly;
         }
         a {
-            font-size: 48px;
+            font-size: 36px;
             color: $brand_header_color;
         }
     }
     ul {
-        height: 100px;
+        height: 70px;
         display: flex;
-        justify-content: space-around;
+        justify-content: space-evenly;
         align-items: center;
         list-style: none;
     }
+    @media (max-width: $screen_sm_max) {
+        flex-direction: column;
+        .contacts {
+            a {
+                font-size: 13px;
+            }
+        }
+    }
 }
 
-// === / banner part ===
-// === promo_part ===
+// ================================================================== / banner part ==================================================================
+// ================================================================== promo_part ==================================================================
 .promo_part {
     background: url(../assets/index/banner.jpg) no-repeat 20% 0%;
     background-size: auto 100%;
@@ -290,7 +301,6 @@ header {
         }
     }
     @media (max-width: $screen_xs_max) {
-        // background-position: 0 0;
         padding: 0;
     }
     .gistogramm_area {
@@ -300,7 +310,7 @@ header {
         height: 100%;
     }
     .gistogramma {
-        height: 560px;
+        height: 700px;
         list-style: none;
         display: flex;
         justify-content: space-around;
@@ -314,9 +324,6 @@ header {
             text-align: center;
             font-size: 18px;
             color: $brand_text_color;
-        }
-        p {
-            font-size: 16px;
         }
         @media (max-width: $screen_xs_max) {
             padding: 90px 3px 20px;
@@ -409,8 +416,8 @@ header {
     }
 }
 
-// === / promo_part ===
-// === about_part ===
+// ================================================================== / promo_part ==================================================================
+// ================================================================== about_part ==================================================================
 .about_part {
     color: $brand_text_color_dark;
     text-align: center;
@@ -484,8 +491,8 @@ header {
     }
 }
 
-// === / about_part ===
-// === block_vacancies PAGE===
+// ================================================================== / about_part ==================================================================
+// ================================================================== block_vacancies PAGE ==================================================================
 .block_vacancies {
     color: $brand_text_color_dark;
     display: flex;
@@ -535,6 +542,7 @@ header {
             transform: scale(1.01);
         }
         .banner_model {
+            // background: url(../assets/vacansy/model.jpg) no-repeat 50% 50%;
             background: url(../assets/vacansy/model.jpg) no-repeat 50% 50%;
             background-size: cover;
         }
@@ -611,8 +619,8 @@ header {
     }
 }
 
-// === / block_vacancies PAGE===
-// === vacancies_item PAGE ===
+// ================================================================== / block_vacancies PAGE ==================================================================
+// ================================================================== vacancies_item PAGE ==================================================================
 .vacancy_preview {
     color: $brand_text_color_dark;
     .banner_model {
@@ -628,16 +636,16 @@ header {
         background-size: cover;
     }
     @media (max-width: $screen_xs_max) {
-        .banner_driver {
-            background: url(../assets/vacansy_items/driverb_mob.jpg) no-repeat 0 0;
+        .banner_model {
+            background: url(../assets/vacansy_items/modelb_mob.jpg) no-repeat 0 0;
             background-size: auto 100%;
         }
         .banner_admin {
             background: url(../assets/vacansy_items/adminb_mob.jpg) no-repeat 0 0;
             background-size: auto 100%;
         }
-        .banner_model {
-            background: url(../assets/vacansy_items/modelb_mob.jpg) no-repeat 0 0;
+        .banner_driver {
+            background: url(../assets/vacansy_items/driverb_mob.jpg) no-repeat 0 0;
             background-size: auto 100%;
         }
     }
@@ -783,8 +791,8 @@ header {
     }
 }
 
-// === / vacancies_item PAGE===
-// === callback_part ===
+// ================================================================== / vacancies_item PAGE ==========================================================
+// ================================================================== callback_part ==================================================================
 .callback_part {
     background-color: #323232;
     text-align: center;
@@ -918,7 +926,7 @@ header {
     }
 }
 
-// === / callback_part ===
+// ================================================================== / callback_part =========================================================
 footer {
     background-color: #222;
     padding: 16px 40px;

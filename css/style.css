@@ -54,6 +54,7 @@ section {
 }
 
 header {
+  display: flex;
   font-family: sans-serif;
   background-color: #323232;
 }
@@ -113,6 +114,7 @@ header .active:hover {
     transition: height 0.3s linear;
   }
   header .menu_item {
+    flex: 1;
     display: flex;
     justify-content: center;
     opacity: 0;
@@ -148,8 +150,6 @@ header .active:hover {
   margin: 0 auto;
   width: 100px;
   height: 30px;
-  position: relative;
-  top: -3px;
 }
 
 .banner_part {
@@ -214,10 +214,10 @@ header .active:hover {
 
 .head_bottom {
   display: flex;
-  background-color: #616161;
+  background-color: #323232;
 }
 .head_bottom .contacts {
-  flex: 3;
+  flex: 2;
 }
 .head_bottom .contacts a {
   display: inline-block;
@@ -229,6 +229,7 @@ header .active:hover {
 }
 .head_bottom .contacts i {
   margin-right: 10px;
+  font-size: 18px;
 }
 .head_bottom .messengers {
   flex: 1;
@@ -238,15 +239,23 @@ header .active:hover {
   justify-content: space-evenly;
 }
 .head_bottom .messengers a {
-  font-size: 48px;
+  font-size: 36px;
   color: #323232;
 }
 .head_bottom ul {
-  height: 100px;
+  height: 70px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   list-style: none;
+}
+@media (max-width: 767px) {
+  .head_bottom {
+    flex-direction: column;
+  }
+  .head_bottom .contacts a {
+    font-size: 13px;
+  }
 }
 
 .promo_part {
@@ -279,7 +288,7 @@ header .active:hover {
   height: 100%;
 }
 .promo_part .gistogramma {
-  height: 560px;
+  height: 700px;
   list-style: none;
   display: flex;
   justify-content: space-around;
@@ -294,9 +303,6 @@ header .active:hover {
   text-align: center;
   font-size: 18px;
   color: #fff;
-}
-.promo_part .gistogramma p {
-  font-size: 16px;
 }
 @media (max-width: 575px) {
   .promo_part .gistogramma {
@@ -613,16 +619,16 @@ header .active:hover {
   background-size: cover;
 }
 @media (max-width: 575px) {
-  .vacancy_preview .banner_driver {
-    background: url(../assets/vacansy_items/driverb_mob.jpg) no-repeat 0 0;
+  .vacancy_preview .banner_model {
+    background: url(../assets/vacansy_items/modelb_mob.jpg) no-repeat 0 0;
     background-size: auto 100%;
   }
   .vacancy_preview .banner_admin {
     background: url(../assets/vacansy_items/adminb_mob.jpg) no-repeat 0 0;
     background-size: auto 100%;
   }
-  .vacancy_preview .banner_model {
-    background: url(../assets/vacansy_items/modelb_mob.jpg) no-repeat 0 0;
+  .vacancy_preview .banner_driver {
+    background: url(../assets/vacansy_items/driverb_mob.jpg) no-repeat 0 0;
     background-size: auto 100%;
   }
 }

@@ -205,14 +205,14 @@
             <div id="area_after_form_send">
                 <div>Спасибо! <br> Ваша заявка успешно отправлена </div>
             </div>
-            <div class="form_area">
+            <div id="form_area" class="form_area">
                 <form id="callback_forma">
                     <input name="name" type="text" placeholder="Name">
                     <input name="email" type="email" placeholder="Email">
                     <input name="tel" type="tel" placeholder="Phone number">
                     <textarea name="text" id="" cols="30" rows="10" placeholder="Message"></textarea>
                     <div>
-                        <button onclick="ajaxFormRequest('callback_forma')">Отправить</button>
+                        <button onclick="ajaxFormRequest('callback_forma', 'form_area')">Отправить</button>
                     </div>
                 </form>
                 <div class="blockText">

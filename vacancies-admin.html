@@ -105,28 +105,30 @@
     <!-- ------------------------------------------------------------------------------------ -->
     <!-- ------------------------------------------------------------------------------------ -->
     <section class="callback_part" id="anketa">
-        <p class="h2">Get In Touch</p>
-        <p>In order to get in touch use the contact form below:</p>
+        <p class="h2">Обратная связь</p>
+        <p>Напиши нам и мы с тобой свяжемся.</p>
         <div class="callback_part__content wrapper">
             <div id="area_after_form_send">
                 <div>Спасибо! <br> Ваша заявка успешно отправлена </div>
             </div>
-            <div class="form_area">
+            <div id="form_area" class="form_area">
                 <form id="callback_forma">
                     <input name="name" type="text" placeholder="Name">
                     <input name="email" type="email" placeholder="Email">
                     <input name="tel" type="tel" placeholder="Phone number">
                     <textarea name="text" id="" cols="30" rows="10" placeholder="Message"></textarea>
                     <div>
-                        <button onclick="ajaxFormRequest('callback_forma')">SEND</button>
+                        <button onclick="ajaxFormRequest('callback_forma', 'form_area')">Отправить</button>
                     </div>
                 </form>
                 <div class="blockText">
                     <p><span class="">Quisque Hendrerit:</span> purus dapibus, ornare nibh vitae, viverra nibh. Fusce vitae aliquam tellus. Proin sit amet volutpat libero. Nulla sed nunc et tortor luctus faucibus morbi vitae. </p>
                     <div class="contacts">
-                        <p><i class="fas fa-map-marker-alt"></i>Elm St. 14/05 Lost City</p>
-                        <p><i class="fas fa-phone-alt"></i>+380996661488</p>
-                        <p><i class="fas fa-envelope"></i>info@hexalcorp.com</p>
+                        <ul>
+                            <li><a href=""><i class="fas fa-map-marker-alt"></i>Elm St. 14/05 Lost City</a></li>
+                            <li><a href=""><i class="fas fa-phone-alt"></i>+380996661488</a></li>
+                            <li><a href=""><i class="fas fa-envelope"></i>info@hexalcorp.com</a></li>
+                        </ul>
                     </div>
                 </div>
             </div>

@@ -4,7 +4,6 @@
 }
 
 @mixin gradient_text {
-    display: inline-block;
     background: linear-gradient(90deg, $brand_link_color, lighten($brand_link_color, 20%));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent
@@ -101,7 +100,6 @@ header {
     }
     .active {
         color: $brand_link_color;
-        // @include gradient_text();
         &:hover {
             color: $brand_text_color;
         }
@@ -191,12 +189,10 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    // padding: 30px 0 10px;
     .outer_circle {
         display: none;
     }
     @media (max-width: $screen_sm_max) {
-        // padding: 10px 0;
         .small_circle {
             display: none;
         }
@@ -254,11 +250,6 @@ header {
             @include gradient_text();
             font-weight: 600;
             font-size: 16px;
-            img {
-                // @include gradient_background();
-                width: 20px;
-                fill: $brand_link_color;
-            }
             transition: .4s;
             &:hover {
                 transform: scale(1.1);
@@ -414,9 +405,7 @@ header {
                 font-size: 64px;
                 color: $brand_link_color;
                 transition: all .2s linear;
-                background: linear-gradient(90deg, $brand_link_color, lighten($brand_link_color, 20%));
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
+                @include gradient_text();
             }
             &:hover .smile {
                 color: darken($brand_link_color, 30%);
@@ -617,11 +606,11 @@ header {
                 font-weight: 600;
             }
             a {
+                @include gradient_background();
                 text-align: center;
                 width: 226px;
                 border: none;
                 padding: 14px;
-                background: linear-gradient(90deg, $brand_link_color, lighten($brand_link_color, 20%));
                 box-shadow: 0 0 7px $brand_link_color;
                 color: darken($brand_link_color, 40%);
                 font-size: 16px;
@@ -816,6 +805,7 @@ header {
 .callback_part {
     background-color: #323232;
     text-align: center;
+    min-height: 700px;
     p,
     a {
         color: #a0a0a0;
@@ -841,9 +831,9 @@ header {
     display: none;
     font-size: 28px;
     line-height: 34px;
-    background: linear-gradient(90deg, $brand_link_color, lighten($brand_link_color, 20%));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    font-weight: 600;
+    margin-top: 100px;
+    @include gradient_text();
 }
 
 .form_area {

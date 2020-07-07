@@ -221,17 +221,12 @@ header .active:hover {
 }
 .head_bottom .contacts a {
   display: flex;
-  display: inline-block;
   background: linear-gradient(90deg, #f79a88, #fdebe8);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: 600;
   font-size: 16px;
   transition: 0.4s;
-}
-.head_bottom .contacts a img {
-  width: 20px;
-  fill: #f79a88;
 }
 .head_bottom .contacts a:hover {
   transform: scale(1.1);
@@ -599,11 +594,11 @@ header .active:hover {
   font-weight: 600;
 }
 .block_vacancies .vacancy_item__bottom a {
+  background: linear-gradient(90deg, #f79a88, #fdebe8);
   text-align: center;
   width: 226px;
   border: none;
   padding: 14px;
-  background: linear-gradient(90deg, #f79a88, #fdebe8);
   box-shadow: 0 0 7px #f79a88;
   color: #a8250b;
   font-size: 16px;
@@ -674,7 +669,6 @@ header .active:hover {
   bottom: 5px;
 }
 .vacancy_preview__banner-subtitle {
-  display: inline-block;
   background: linear-gradient(90deg, #f79a88, #fdebe8);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -797,6 +791,7 @@ header .active:hover {
 .callback_part {
   background-color: #323232;
   text-align: center;
+  min-height: 700px;
 }
 .callback_part p,
 .callback_part a {
@@ -805,7 +800,6 @@ header .active:hover {
 .callback_part .h2 {
   font-size: 42px;
   font-weight: 600;
-  display: inline-block;
   background: linear-gradient(90deg, #f79a88, #fdebe8);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -825,6 +819,8 @@ header .active:hover {
   display: none;
   font-size: 28px;
   line-height: 34px;
+  font-weight: 600;
+  margin-top: 100px;
   background: linear-gradient(90deg, #f79a88, #fdebe8);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -842,7 +838,6 @@ header .active:hover {
 }
 .form_area .blockText span {
   font-weight: 600;
-  display: inline-block;
   background: linear-gradient(90deg, #f79a88, #fdebe8);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -893,28 +888,24 @@ header .active:hover {
   background-color: #686565;
 }
 .form_area form ::-webkit-input-placeholder {
-  display: inline-block;
   background: linear-gradient(90deg, #f79a88, #fdebe8);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: 600;
 }
 .form_area form ::-moz-placeholder {
-  display: inline-block;
   background: linear-gradient(90deg, #f79a88, #fdebe8);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: 600;
 }
 .form_area form :-moz-placeholder {
-  display: inline-block;
   background: linear-gradient(90deg, #f79a88, #fdebe8);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: 600;
 }
 .form_area form :-ms-input-placeholder {
-  display: inline-block;
   background: linear-gradient(90deg, #f79a88, #fdebe8);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

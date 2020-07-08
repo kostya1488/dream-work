@@ -151,6 +151,7 @@ header {
             flex: 1;
             display: flex;
             justify-content: center;
+            align-items: center;
             opacity: 0;
             visibility: hidden;
         }
@@ -169,9 +170,6 @@ header {
     justify-content: center;
     align-items: center;
     height: 68px;
-    .menu_item {
-        width: 103px;
-    }
     .logo {
         font-size: 48px;
     }
@@ -303,8 +301,8 @@ header {
     background: url(../assets/banner/banner.jpg) no-repeat 20% 0%;
     background-size: auto 100%;
     padding: 10px;
+    height: 100vh;
     @media (min-width: $screen_lg) {
-        height: 100vh;
         .gistogramma {
             max-width: 500px;
             height: 560px;
@@ -324,7 +322,9 @@ header {
         height: 100%;
     }
     .gistogramma {
-        height: 700px;
+        height: 100%;
+        max-height: 700px;
+        // min-height: 500px;
         list-style: none;
         display: flex;
         justify-content: space-around;

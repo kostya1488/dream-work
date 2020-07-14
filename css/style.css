@@ -36,6 +36,9 @@ section {
   text-align: center;
   font-size: 42px;
   margin-bottom: 30px; }
+  @media (max-width: 575px) {
+    .title_text {
+      font-size: 26px; } }
 
 #checkbox-menu,
 .toggle {
@@ -170,7 +173,7 @@ header {
 
 .head_bottom {
   display: flex;
-  background-color: #323232; }
+  background-color: #323232c7; }
   .head_bottom .contacts {
     flex: 2; }
     .head_bottom .contacts a {
@@ -204,9 +207,13 @@ header {
     list-style: none; }
   @media (max-width: 767px) {
     .head_bottom {
-      flex-direction: column; }
-      .head_bottom .contacts a {
-        font-size: 13px; } }
+      flex-direction: column; } }
+  @media (min-width: 576px) and (max-width: 767px) {
+    .head_bottom .contacts a {
+      font-size: 13px; } }
+  @media (max-width: 575px) {
+    .head_bottom .contacts_mail {
+      display: none; } }
 
 .promo_part {
   background: url(../assets/banner/banner.jpg) no-repeat 20% 0%;
@@ -288,8 +295,6 @@ header {
     width: 100%;
     max-width: 130px;
     min-width: 60px; }
-    .promo_part .list_item_sotra p {
-      font-size: 24px; }
     .promo_part .list_item_sotra .gistogram_column {
       background-color: #fff; }
       .promo_part .list_item_sotra .gistogram_column p {
@@ -302,7 +307,6 @@ header {
         transition: all .2s linear;
         color: #f79a88; }
       .promo_part .list_item_sotra .gistogram_column:hover .smile {
-        color: #d82f0e;
         transform: scale(1.3);
         margin: 10px; }
       @media (max-width: 575px) {
@@ -329,20 +333,22 @@ header {
   margin-bottom: 50px; }
   .service .row {
     display: flex;
-    justify-content: space-between; }
+    flex-wrap: wrap;
+    justify-content: space-evenly; }
 
 .service_item {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  max-width: 300px;
+  max-width: 250px;
   padding: 8px;
   margin-bottom: 20px; }
   .service_item__description {
     font-size: 14px; }
   .service_item__title {
-    margin: 15px 0; }
+    margin: 15px 0;
+    font-weight: 500; }
   .service_item__circle {
     display: flex;
     justify-content: center;
@@ -355,23 +361,13 @@ header {
     padding: 10px;
     font-size: 40px;
     text-align: center; }
-  @media (max-width: 575px) {
+  @media (min-width: 576px) {
     .service_item {
-      padding: 4px; }
-      .service_item__description {
-        font-size: 10px; }
-      .service_item__title {
-        font-size: 14px;
-        font-weight: 500; }
-      .service_item__circle {
-        width: 50px;
-        height: 50px;
-        padding: 4px;
-        font-size: 28px; } }
+      margin: 20px 30px; } }
 
 .description_wrap {
   background: linear-gradient(90deg, #f79a88, #fdebe8);
-  padding: 90px 0; }
+  padding: 90px 10px; }
 
 .block_vacancies {
   color: #616161;
@@ -416,8 +412,8 @@ header {
     .block_vacancies .vacancy_item .banner_admin {
       background: url(../assets/vacansy/admin.jpg) no-repeat 50% 50%;
       background-size: cover; }
-    .block_vacancies .vacancy_item .banner_driver {
-      background: url(../assets/vacansy/driver.jpg) no-repeat 50% 50%;
+    .block_vacancies .vacancy_item .banner_masseur {
+      background: url(../assets/vacansy/masseur.jpg) no-repeat 50% 50%;
       background-size: cover; }
     .block_vacancies .vacancy_item__banner {
       height: 200px; }
@@ -480,8 +476,8 @@ header {
   .vacancy_preview .banner_admin {
     background: url(../assets/vacansy_items/admin.jpg) no-repeat center top;
     background-size: cover; }
-  .vacancy_preview .banner_driver {
-    background: url(../assets/vacansy_items/driver.jpg) no-repeat right top;
+  .vacancy_preview .banner_masseur {
+    background: url(../assets/vacansy_items/masseur.jpg) no-repeat right top;
     background-size: cover; }
   @media (max-width: 575px) {
     .vacancy_preview .banner_model {
@@ -490,8 +486,8 @@ header {
     .vacancy_preview .banner_admin {
       background: url(../assets/vacansy_items/adminb_mob.jpg) no-repeat center top;
       background-size: auto; }
-    .vacancy_preview .banner_driver {
-      background: url(../assets/vacansy_items/driverb_mob.jpg) no-repeat left top;
+    .vacancy_preview .banner_masseur {
+      background: url(../assets/vacansy_items/masseur_mob.jpg) no-repeat left top;
       background-size: auto; } }
   .vacancy_preview__banner {
     height: 420px; }
@@ -635,7 +631,7 @@ header {
   justify-content: space-evenly;
   margin-top: 50px; }
   .form_area .blockText {
-    max-width: 280px;
+    max-width: 320px;
     width: 100%;
     padding: 10px; }
     .form_area .blockText span {
@@ -677,17 +673,13 @@ header {
       .form_area form textarea:focus {
         background-color: #686565; }
     .form_area form ::-webkit-input-placeholder {
-      color: #f79a88;
-      font-weight: 600; }
+      color: #fac3b8; }
     .form_area form ::-moz-placeholder {
-      color: #f79a88;
-      font-weight: 600; }
+      color: #f79a88; }
     .form_area form :-moz-placeholder {
-      color: #f79a88;
-      font-weight: 600; }
+      color: #f79a88; }
     .form_area form :-ms-input-placeholder {
-      color: #f79a88;
-      font-weight: 600; }
+      color: #f79a88; }
     .form_area form button {
       background: linear-gradient(90deg, #f79a88, #fdebe8);
       box-shadow: 0 0 7px #f79a88;

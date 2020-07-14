@@ -1,6 +1,6 @@
 <?php
-$recepient = "matvienkoigor956@gmail.com";
-$sitename = "DW";
+$recepient = "manager@dreamwork.kiev.ua";
+$sitename = "dreamwork.kiev.ua";
 $token = "1075686909:AAERuG4YvzxCjg3ChV_vI0LCNhCKDP5cDrI"; 
 $chat_id = "-424143553";
 

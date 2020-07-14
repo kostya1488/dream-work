@@ -481,10 +481,11 @@ header {
     padding: 8px;
     margin-bottom: 20px;
     &__description {
-        font-size: 14px;
+        font-size: 15px;
     }
     &__title {
         margin: 15px 0;
+        font-size: 18px;
         font-weight: 500;
     }
     &__circle {
@@ -922,13 +923,13 @@ header {
             color: lighten($brand_link_color, 10%);
         }
          ::-moz-placeholder {
-            color: $brand_link_color;
+            color: lighten($brand_link_color, 10%);
         }
          :-moz-placeholder {
-            color: $brand_link_color;
+            color: lighten($brand_link_color, 10%);
         }
          :-ms-input-placeholder {
-            color: $brand_link_color;
+            color: lighten($brand_link_color, 10%);
         }
         button {
             background: linear-gradient(90deg, $brand_link_color, lighten($brand_link_color, 20%));

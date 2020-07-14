@@ -345,9 +345,10 @@ header {
   padding: 8px;
   margin-bottom: 20px; }
   .service_item__description {
-    font-size: 14px; }
+    font-size: 15px; }
   .service_item__title {
     margin: 15px 0;
+    font-size: 18px;
     font-weight: 500; }
   .service_item__circle {
     display: flex;
@@ -675,11 +676,11 @@ header {
     .form_area form ::-webkit-input-placeholder {
       color: #fac3b8; }
     .form_area form ::-moz-placeholder {
-      color: #f79a88; }
+      color: #fac3b8; }
     .form_area form :-moz-placeholder {
-      color: #f79a88; }
+      color: #fac3b8; }
     .form_area form :-ms-input-placeholder {
-      color: #f79a88; }
+      color: #fac3b8; }
     .form_area form button {
       background: linear-gradient(90deg, #f79a88, #fdebe8);
       box-shadow: 0 0 7px #f79a88;
